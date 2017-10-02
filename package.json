@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "redux-seed",
-  "version": "4.1.0",
-  "description": "Rubix Redux Starter Kit",
-  "homepage": "https://rubix410.sketchpixy.com/",
+  "name": "dynastyfftools",
+  "version": "2.1.0",
+  "description": "DynastyFF Tools",
+  "homepage": "https://dynastyfftools.com/",
   "watch": {
     "dev:server": "tmp/bundle.js"
   },
@@ -40,7 +40,7 @@
     "test": "mocha --compilers :./tools/babel-setup.js --recursive --watch ./test/*.js",
     "start": "node server.js"
   },
-  "author": "Sketchpixy <support@sketchpixy.com>",
+  "author": "sicknarlo <nicholas.l.sarlo@gmail.com>",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "bless-webpack-plugin": "^1.0.0",
