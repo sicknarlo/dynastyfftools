@@ -1,5 +1,5 @@
-import greetings from './greetings';
+import players from './players';
 
 module.exports = {
-  ...greetings,
+  ...players,
 };

@@ -20,28 +20,27 @@ export function createPlayer(player) {
 	});
   }
 
-  return db.players.insert({ player, createdAt: new Date().getTime(), updatedAt: new Date().getTime() });
+  return db.players.insert({ ...player, createdAt: new Date(), updatedAt: new Date() });
 }
 
 export function removePlayer(_id) {
   return db.players.remove({ _id: pmongo.ObjectId(_id) })
 				 .then(() => {
-					return { _id: _id };
+					  return { _id: _id };
 				 });
 }
 
-export function updatePlayer(_id, player) {
-  const playerObject = player;
-  playerObject.updatedAt = new Date().getTime();
+export function updatePlayer(player) {
   let playerItem = {
-	player
+	  ...player,
+    updatedAt: new Date(),
   };
 
-  if (!_id) return new Promise((resolve, reject) => {
-	reject(`"_id" required to update player\n`);
-  });
+  const id = player._id;
 
-  if (!player) delete playerItem.player;
+  if (!id) return new Promise((resolve, reject) => {
+	  reject(`"_id" required to update player\n`);
+  });
 
   return db.players.findAndModify({
 			new: true, // return the newly modified document
