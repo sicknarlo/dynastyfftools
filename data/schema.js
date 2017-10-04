@@ -146,9 +146,10 @@ const queryType = new GraphQLObjectType({
 	player: {
 	  type: playerType,
 	  args: {
-		_id: { type: new GraphQLNonNull(GraphQLString) },
+		_id: { type: GraphQLString },
+        name: { type: GraphQLString }
 	  },
-	  resolve: (_, { _id }) => getPlayer(_id),
+	  resolve: (_, args) => getPlayer(args),
 	},
 	players: {
 	  type: new GraphQLList(playerType),

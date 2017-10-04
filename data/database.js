@@ -2,8 +2,11 @@ import pmongo from 'promised-mongo';
 
 const db = pmongo('dynastyfftools', ['players']);
 
-export function getPlayer(_id) {
-  return db.players.findOne({ _id: pmongo.ObjectId(_id) });
+export function getPlayer({ _id = null, name= null }) {
+  // Fetch player by _id if id
+  if (_id) return db.players.findOne({ _id: pmongo.ObjectId(_id) });
+  // Fetch player by name if name
+  if (name) return db.players.findOne({ name });
 }
 
 export function getPlayers() {
