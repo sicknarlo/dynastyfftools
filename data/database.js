@@ -1,4 +1,5 @@
 import pmongo from 'promised-mongo';
+import { convertFromEpoch } from '../src/utilities';
 
 const db = pmongo('dynastyfftools', ['players']);
 
@@ -20,7 +21,7 @@ export function createPlayer(player) {
 	});
   }
 
-  return db.players.insert({ ...player, createdAt: new Date(), updatedAt: new Date() });
+  return db.players.insert({ ...player, createdAt: convertFromEpoch(new Date()), updatedAt: convertFromEpoch(new Date()) });
 }
 
 export function removePlayer(_id) {
@@ -33,7 +34,7 @@ export function removePlayer(_id) {
 export function updatePlayer(player) {
   let playerItem = {
 	  ...player,
-    updatedAt: new Date(),
+    updatedAt: convertFromEpoch(new Date()),
   };
 
   const id = player._id;

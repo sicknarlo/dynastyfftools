@@ -54,7 +54,7 @@ require('source-map-support').install({environment: 'node'});
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(186);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(609);var _RubixAssetMiddleware=__webpack_require__(636);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(637);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(657);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');}();;
+	'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(186);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(609);var _RubixAssetMiddleware=__webpack_require__(636);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(637);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(661);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');}();;
 
 /***/ }),
 /* 2 */
@@ -51275,10 +51275,10 @@ require('source-map-support').install({environment: 'node'});
 /* 637 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(638);var _graphqlDate=__webpack_require__(659);var _graphqlDate2=_interopRequireDefault(_graphqlDate);var _types=__webpack_require__(660);var _database=__webpack_require__(639);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// import dynastyfftools types
-	// import GraphQL types
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(638);var _types=__webpack_require__(640);var _database=__webpack_require__(643);// import dynastyfftools types
 	var queryType=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{player:{type:_types.PlayerType,args:{_id:{type:_graphql.GraphQLString},name:{type:_graphql.GraphQLString}},resolve:function resolve(_,args){return(0,_database.getPlayer)(args);}},players:{type:new _graphql.GraphQLList(_types.PlayerType),resolve:function resolve(){return(0,_database.getPlayers)();}}};}});// import db operations
-	var mutationType=new _graphql.GraphQLObjectType({name:'Mutation',fields:function fields(){return{createPlayer:{type:_types.PlayerType,args:{player:{type:_types.PlayerInputType}},resolve:function resolve(_,_ref){var player=_ref.player;return(0,_database.createPlayer)(player);}},updatePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)},old_id:{type:_graphql.GraphQLString},mfl_id:{type:_graphql.GraphQLString},name:{type:_graphql.GraphQLString},position:{type:_graphql.GraphQLString},team:{type:_graphql.GraphQLString},draft_year:{type:_graphql.GraphQLString},twitter_username:{type:_graphql.GraphQLString},stats_id:{type:_graphql.GraphQLString},weight:{type:_graphql.GraphQLString},college:{type:_graphql.GraphQLString},draft_round:{type:_graphql.GraphQLString},height:{type:_graphql.GraphQLString},rotoworld_id:{type:_graphql.GraphQLString},nfl_id:{type:_graphql.GraphQLString},espn_id:{type:_graphql.GraphQLString},birthdate:{type:_graphqlDate2.default},status:{type:_graphql.GraphQLString},armchair_id:{type:_graphql.GraphQLString},stats_global_id:{type:_graphql.GraphQLString},kffl_id:{type:_graphql.GraphQLString},draft_team:{type:_graphql.GraphQLString},draft_pick:{type:_graphql.GraphQLString},jersey:{type:_graphql.GraphQLString},cbs_id:{type:_graphql.GraphQLString},sportsdata_id:{type:_graphql.GraphQLString},fp_id:{type:_graphql.GraphQLString},createdAt:{type:_graphqlDate2.default},updatedAt:{type:_graphqlDate2.default}},resolve:function resolve(_,args){return(0,_database.updatePlayer)(args);}},removePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref2){var _id=_ref2._id;return(0,_database.removePlayer)(_id);}}};}});var _default=new _graphql.GraphQLSchema({query:queryType,mutation:mutationType});exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(queryType,'queryType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(mutationType,'mutationType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');}();;
+	// import GraphQL types
+	var mutationType=new _graphql.GraphQLObjectType({name:'Mutation',fields:function fields(){return{createPlayer:{type:_types.PlayerType,args:{player:{type:_types.PlayerInputType}},resolve:function resolve(_,_ref){var player=_ref.player;return(0,_database.createPlayer)(player);}},updatePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)},old_id:{type:_graphql.GraphQLString},mfl_id:{type:_graphql.GraphQLString},name:{type:_graphql.GraphQLString},position:{type:_graphql.GraphQLString},team:{type:_graphql.GraphQLString},draft_year:{type:_graphql.GraphQLString},twitter_username:{type:_graphql.GraphQLString},stats_id:{type:_graphql.GraphQLString},weight:{type:_graphql.GraphQLString},college:{type:_graphql.GraphQLString},draft_round:{type:_graphql.GraphQLString},height:{type:_graphql.GraphQLString},rotoworld_id:{type:_graphql.GraphQLString},nfl_id:{type:_graphql.GraphQLString},espn_id:{type:_graphql.GraphQLString},birthdate:{type:_graphql.GraphQLInt},status:{type:_graphql.GraphQLString},armchair_id:{type:_graphql.GraphQLString},stats_global_id:{type:_graphql.GraphQLString},kffl_id:{type:_graphql.GraphQLString},draft_team:{type:_graphql.GraphQLString},draft_pick:{type:_graphql.GraphQLString},jersey:{type:_graphql.GraphQLString},cbs_id:{type:_graphql.GraphQLString},sportsdata_id:{type:_graphql.GraphQLString},fp_id:{type:_graphql.GraphQLString},createdAt:{type:_graphql.GraphQLInt},updatedAt:{type:_graphql.GraphQLInt}},resolve:function resolve(_,args){return(0,_database.updatePlayer)(args);}},removePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref2){var _id=_ref2._id;return(0,_database.removePlayer)(_id);}}};}});var _default=new _graphql.GraphQLSchema({query:queryType,mutation:mutationType});exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(queryType,'queryType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(mutationType,'mutationType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');}();;
 
 /***/ }),
 /* 638 */
@@ -51287,35 +51287,56 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = require("graphql");
 
 /***/ }),
-/* 639 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';exports.__esModule=true;var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _promise=__webpack_require__(640);var _promise2=_interopRequireDefault(_promise);exports.getPlayer=getPlayer;exports.getPlayers=getPlayers;exports.createPlayer=createPlayer;exports.removePlayer=removePlayer;exports.updatePlayer=updatePlayer;var _promisedMongo=__webpack_require__(656);var _promisedMongo2=_interopRequireDefault(_promisedMongo);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var db=(0,_promisedMongo2.default)('dynastyfftools',['players']);function getPlayer(_ref){var _ref$_id=_ref._id,_id=_ref$_id===undefined?null:_ref$_id,_ref$name=_ref.name,name=_ref$name===undefined?null:_ref$name;// Fetch player by _id if id
-	if(_id)return db.players.findOne({_id:_promisedMongo2.default.ObjectId(_id)});// Fetch player by name if name
-	if(name)return db.players.findOne({name:name});}function getPlayers(){return db.players.find({});}function createPlayer(player){if(!player){return new _promise2.default(function(resolve,reject){reject('"player" cannot be empty');});}return db.players.insert((0,_extends3.default)({},player,{createdAt:new Date(),updatedAt:new Date()}));}function removePlayer(_id){return db.players.remove({_id:_promisedMongo2.default.ObjectId(_id)}).then(function(){return{_id:_id};});}function updatePlayer(player){var playerItem=(0,_extends3.default)({},player,{updatedAt:new Date()});var id=player._id;if(!id)return new _promise2.default(function(resolve,reject){reject('"_id" required to update player\n');});return db.players.findAndModify({new:true,// return the newly modified document
-	query:{_id:_promisedMongo2.default.ObjectId(_id)},update:{$set:playerItem}}).then(function(_ref2){var value=_ref2.value;return value;});};var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(db,'db','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');}();;
-
-/***/ }),
+/* 639 */,
 /* 640 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(641), __esModule: true };
+	'use strict';var _PlayerType=__webpack_require__(641);var _PlayerType2=_interopRequireDefault(_PlayerType);var _PlayerInputType=__webpack_require__(642);var _PlayerInputType2=_interopRequireDefault(_PlayerInputType);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports={PlayerType:_PlayerType2.default,PlayerInputType:_PlayerInputType2.default};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ }),
 /* 641 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(638);var PlayerType=new _graphql.GraphQLObjectType({name:'Player',fields:function fields(){return{_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var _id=_ref._id;return _id;}},old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var old_id=_ref2.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var mfl_id=_ref3.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var name=_ref4.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var position=_ref5.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var team=_ref6.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var draft_year=_ref7.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var twitter_username=_ref8.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var stats_id=_ref9.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var weight=_ref10.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var college=_ref11.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var draft_round=_ref12.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var height=_ref13.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var rotoworld_id=_ref14.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var nfl_id=_ref15.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref16){var espn_id=_ref16.espn_id;return espn_id;}},birthdate:{type:_graphql.GraphQLInt,resolve:function resolve(_ref17){var birthdate=_ref17.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var status=_ref18.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var armchair_id=_ref19.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var stats_global_id=_ref20.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var kffl_id=_ref21.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_team=_ref22.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var draft_pick=_ref23.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var jersey=_ref24.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var cbs_id=_ref25.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var sportsdata_id=_ref26.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref27){var fp_id=_ref27.fp_id;return fp_id;}},createdAt:{type:_graphql.GraphQLInt,resolve:function resolve(_ref28){var createdAt=_ref28.createdAt;return createdAt;}},updatedAt:{type:_graphql.GraphQLInt,resolve:function resolve(_ref29){var updatedAt=_ref29.updatedAt;return updatedAt;}}};}});// import GraphQL types
+	var _default=PlayerType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerType,'PlayerType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerType.js');}();;
+
+/***/ }),
+/* 642 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(638);var PlayerInputType=new _graphql.GraphQLInputObjectType({name:'PlayerInput',description:'Input player payload',fields:function fields(){return{old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var old_id=_ref.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var mfl_id=_ref2.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var name=_ref3.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var position=_ref4.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var team=_ref5.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var draft_year=_ref6.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var twitter_username=_ref7.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var stats_id=_ref8.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var weight=_ref9.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var college=_ref10.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var draft_round=_ref11.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var height=_ref12.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var rotoworld_id=_ref13.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var nfl_id=_ref14.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var espn_id=_ref15.espn_id;return espn_id;}},birthdate:{type:_graphql.GraphQLInt,resolve:function resolve(_ref16){var birthdate=_ref16.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref17){var status=_ref17.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var armchair_id=_ref18.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var stats_global_id=_ref19.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var kffl_id=_ref20.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var draft_team=_ref21.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_pick=_ref22.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var jersey=_ref23.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var cbs_id=_ref24.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var sportsdata_id=_ref25.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var fp_id=_ref26.fp_id;return fp_id;}}};}});// import GraphQL types
+	var _default=PlayerInputType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerInputType,'PlayerInputType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerInputType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerInputType.js');}();;
+
+/***/ }),
+/* 643 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';exports.__esModule=true;var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _promise=__webpack_require__(644);var _promise2=_interopRequireDefault(_promise);exports.getPlayer=getPlayer;exports.getPlayers=getPlayers;exports.createPlayer=createPlayer;exports.removePlayer=removePlayer;exports.updatePlayer=updatePlayer;var _promisedMongo=__webpack_require__(660);var _promisedMongo2=_interopRequireDefault(_promisedMongo);var _utilities=__webpack_require__(663);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var db=(0,_promisedMongo2.default)('dynastyfftools',['players']);function getPlayer(_ref){var _ref$_id=_ref._id,_id=_ref$_id===undefined?null:_ref$_id,_ref$name=_ref.name,name=_ref$name===undefined?null:_ref$name;// Fetch player by _id if id
+	if(_id)return db.players.findOne({_id:_promisedMongo2.default.ObjectId(_id)});// Fetch player by name if name
+	if(name)return db.players.findOne({name:name});}function getPlayers(){return db.players.find({});}function createPlayer(player){if(!player){return new _promise2.default(function(resolve,reject){reject('"player" cannot be empty');});}return db.players.insert((0,_extends3.default)({},player,{createdAt:(0,_utilities.convertFromEpoch)(new Date()),updatedAt:(0,_utilities.convertFromEpoch)(new Date())}));}function removePlayer(_id){return db.players.remove({_id:_promisedMongo2.default.ObjectId(_id)}).then(function(){return{_id:_id};});}function updatePlayer(player){var playerItem=(0,_extends3.default)({},player,{updatedAt:(0,_utilities.convertFromEpoch)(new Date())});var id=player._id;if(!id)return new _promise2.default(function(resolve,reject){reject('"_id" required to update player\n');});return db.players.findAndModify({new:true,// return the newly modified document
+	query:{_id:_promisedMongo2.default.ObjectId(_id)},update:{$set:playerItem}}).then(function(_ref2){var value=_ref2.value;return value;});};var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(db,'db','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');}();;
+
+/***/ }),
+/* 644 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(645), __esModule: true };
+
+/***/ }),
+/* 645 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	__webpack_require__(252);
 	__webpack_require__(192);
 	__webpack_require__(235);
-	__webpack_require__(642);
-	__webpack_require__(654);
-	__webpack_require__(655);
+	__webpack_require__(646);
+	__webpack_require__(658);
+	__webpack_require__(659);
 	module.exports = __webpack_require__(4).Promise;
 
 
 /***/ }),
-/* 642 */
+/* 646 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51326,14 +51347,14 @@ require('source-map-support').install({environment: 'node'});
 	var $export = __webpack_require__(198);
 	var isObject = __webpack_require__(205);
 	var aFunction = __webpack_require__(201);
-	var anInstance = __webpack_require__(643);
-	var forOf = __webpack_require__(644);
-	var speciesConstructor = __webpack_require__(645);
-	var task = __webpack_require__(646).set;
-	var microtask = __webpack_require__(648)();
-	var newPromiseCapabilityModule = __webpack_require__(649);
-	var perform = __webpack_require__(650);
-	var promiseResolve = __webpack_require__(651);
+	var anInstance = __webpack_require__(647);
+	var forOf = __webpack_require__(648);
+	var speciesConstructor = __webpack_require__(649);
+	var task = __webpack_require__(650).set;
+	var microtask = __webpack_require__(652)();
+	var newPromiseCapabilityModule = __webpack_require__(653);
+	var perform = __webpack_require__(654);
+	var promiseResolve = __webpack_require__(655);
 	var PROMISE = 'Promise';
 	var TypeError = global.TypeError;
 	var process = global.process;
@@ -51503,7 +51524,7 @@ require('source-map-support').install({environment: 'node'});
 	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
 	    this._n = false;          // <- notify
 	  };
-	  Internal.prototype = __webpack_require__(652)($Promise.prototype, {
+	  Internal.prototype = __webpack_require__(656)($Promise.prototype, {
 	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
 	    then: function then(onFulfilled, onRejected) {
 	      var reaction = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -51535,7 +51556,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
 	__webpack_require__(231)($Promise, PROMISE);
-	__webpack_require__(653)(PROMISE);
+	__webpack_require__(657)(PROMISE);
 	Wrapper = __webpack_require__(4)[PROMISE];
 	
 	// statics
@@ -51601,7 +51622,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 643 */
+/* 647 */
 /***/ (function(module, exports) {
 
 	module.exports = function (it, Constructor, name, forbiddenField) {
@@ -51612,7 +51633,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 644 */
+/* 648 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var ctx = __webpack_require__(200);
@@ -51643,7 +51664,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 645 */
+/* 649 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -51658,11 +51679,11 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 646 */
+/* 650 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var ctx = __webpack_require__(200);
-	var invoke = __webpack_require__(647);
+	var invoke = __webpack_require__(651);
 	var html = __webpack_require__(230);
 	var cel = __webpack_require__(209);
 	var global = __webpack_require__(199);
@@ -51748,7 +51769,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 647 */
+/* 651 */
 /***/ (function(module, exports) {
 
 	// fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -51770,11 +51791,11 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 648 */
+/* 652 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var global = __webpack_require__(199);
-	var macrotask = __webpack_require__(646).set;
+	var macrotask = __webpack_require__(650).set;
 	var Observer = global.MutationObserver || global.WebKitMutationObserver;
 	var process = global.process;
 	var Promise = global.Promise;
@@ -51844,7 +51865,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 649 */
+/* 653 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51868,7 +51889,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 650 */
+/* 654 */
 /***/ (function(module, exports) {
 
 	module.exports = function (exec) {
@@ -51881,12 +51902,12 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 651 */
+/* 655 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(204);
 	var isObject = __webpack_require__(205);
-	var newPromiseCapability = __webpack_require__(649);
+	var newPromiseCapability = __webpack_require__(653);
 	
 	module.exports = function (C, x) {
 	  anObject(C);
@@ -51899,7 +51920,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 652 */
+/* 656 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var hide = __webpack_require__(202);
@@ -51912,7 +51933,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 653 */
+/* 657 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51932,7 +51953,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 654 */
+/* 658 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-promise-finally
@@ -51940,8 +51961,8 @@ require('source-map-support').install({environment: 'node'});
 	var $export = __webpack_require__(198);
 	var core = __webpack_require__(4);
 	var global = __webpack_require__(199);
-	var speciesConstructor = __webpack_require__(645);
-	var promiseResolve = __webpack_require__(651);
+	var speciesConstructor = __webpack_require__(649);
+	var promiseResolve = __webpack_require__(655);
 	
 	$export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 	  var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -51958,14 +51979,14 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 655 */
+/* 659 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// https://github.com/tc39/proposal-promise-try
 	var $export = __webpack_require__(198);
-	var newPromiseCapability = __webpack_require__(649);
-	var perform = __webpack_require__(650);
+	var newPromiseCapability = __webpack_require__(653);
+	var perform = __webpack_require__(654);
 	
 	$export($export.S, 'Promise', { 'try': function (callbackfn) {
 	  var promiseCapability = newPromiseCapability.f(this);
@@ -51976,19 +51997,19 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 656 */
+/* 660 */
 /***/ (function(module, exports) {
 
 	module.exports = require("promised-mongo");
 
 /***/ }),
-/* 657 */
+/* 661 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _players=__webpack_require__(658);var _players2=_interopRequireDefault(_players);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_players2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _players=__webpack_require__(662);var _players2=_interopRequireDefault(_players);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_players2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ }),
-/* 658 */
+/* 662 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';var _assign=__webpack_require__(268);var _assign2=_interopRequireDefault(_assign);var _actionTypes=__webpack_require__(604);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function getIndexOfPlayerItem(action,state){var index=-1,data=action.result;for(var i=0;i<state.result.length;i++){if(state.result[i]._id===data._id){index=i;break;}}return index;}function players(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[];var action=arguments[1];if(action.error){return{result:state.result,error:action.error};}switch(action.type){case _actionTypes.SINGLE_PLAYER:case _actionTypes.ALL_PLAYERS:return{result:action.result};case _actionTypes.CREATE_PLAYER:return{result:[].concat(state.result,[action.result])};case _actionTypes.EDIT_PLAYER:var index=getIndexOfPlayerItem(action,state);// player not found in state object so return original state
@@ -51998,30 +52019,16 @@ require('source-map-support').install({environment: 'node'});
 	return{result:[].concat(state.result.slice(0,index),state.result.slice(index+1))};default:return state;}}module.exports={players:players};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(getIndexOfPlayerItem,'getIndexOfPlayerItem','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/reducers/players.js');__REACT_HOT_LOADER__.register(players,'players','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/reducers/players.js');}();;
 
 /***/ }),
-/* 659 */
+/* 663 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _time=__webpack_require__(664);var _time2=_interopRequireDefault(_time);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_time2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+
+/***/ }),
+/* 664 */
 /***/ (function(module, exports) {
 
-	module.exports = require("graphql-date");
-
-/***/ }),
-/* 660 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';var _PlayerType=__webpack_require__(661);var _PlayerType2=_interopRequireDefault(_PlayerType);var _PlayerInputType=__webpack_require__(662);var _PlayerInputType2=_interopRequireDefault(_PlayerInputType);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports={PlayerType:_PlayerType2.default,PlayerInputType:_PlayerInputType2.default};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
-
-/***/ }),
-/* 661 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(638);var _graphqlDate=__webpack_require__(659);var _graphqlDate2=_interopRequireDefault(_graphqlDate);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// import GraphQL types
-	var PlayerType=new _graphql.GraphQLObjectType({name:'Player',fields:function fields(){return{_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var _id=_ref._id;return _id;}},old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var old_id=_ref2.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var mfl_id=_ref3.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var name=_ref4.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var position=_ref5.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var team=_ref6.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var draft_year=_ref7.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var twitter_username=_ref8.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var stats_id=_ref9.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var weight=_ref10.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var college=_ref11.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var draft_round=_ref12.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var height=_ref13.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var rotoworld_id=_ref14.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var nfl_id=_ref15.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref16){var espn_id=_ref16.espn_id;return espn_id;}},birthdate:{type:_graphqlDate2.default,resolve:function resolve(_ref17){var birthdate=_ref17.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var status=_ref18.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var armchair_id=_ref19.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var stats_global_id=_ref20.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var kffl_id=_ref21.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_team=_ref22.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var draft_pick=_ref23.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var jersey=_ref24.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var cbs_id=_ref25.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var sportsdata_id=_ref26.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref27){var fp_id=_ref27.fp_id;return fp_id;}},createdAt:{type:_graphqlDate2.default,resolve:function resolve(_ref28){var createdAt=_ref28.createdAt;return createdAt;}},updatedAt:{type:_graphqlDate2.default,resolve:function resolve(_ref29){var updatedAt=_ref29.updatedAt;return updatedAt;}}};}});var _default=PlayerType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerType,'PlayerType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerType.js');}();;
-
-/***/ }),
-/* 662 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(638);var _graphqlDate=__webpack_require__(659);var _graphqlDate2=_interopRequireDefault(_graphqlDate);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// import GraphQL types
-	var PlayerInputType=new _graphql.GraphQLInputObjectType({name:'PlayerInput',description:'Input player payload',fields:function fields(){return{old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var old_id=_ref.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var mfl_id=_ref2.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var name=_ref3.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var position=_ref4.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var team=_ref5.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var draft_year=_ref6.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var twitter_username=_ref7.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var stats_id=_ref8.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var weight=_ref9.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var college=_ref10.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var draft_round=_ref11.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var height=_ref12.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var rotoworld_id=_ref13.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var nfl_id=_ref14.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var espn_id=_ref15.espn_id;return espn_id;}},birthdate:{type:_graphqlDate2.default,resolve:function resolve(_ref16){var birthdate=_ref16.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref17){var status=_ref17.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var armchair_id=_ref18.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var stats_global_id=_ref19.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var kffl_id=_ref20.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var draft_team=_ref21.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_pick=_ref22.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var jersey=_ref23.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var cbs_id=_ref24.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var sportsdata_id=_ref25.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var fp_id=_ref26.fp_id;return fp_id;}}};}});var _default=PlayerInputType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerInputType,'PlayerInputType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerInputType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerInputType.js');}();;
+	"use strict";function convertFromEpoch(epoch){return epoch-epoch%1000/1000;}module.exports={convertFromEpoch:convertFromEpoch};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(convertFromEpoch,"convertFromEpoch","C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/utilities/time.js");}();;
 
 /***/ })
 /******/ ]);

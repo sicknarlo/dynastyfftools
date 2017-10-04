@@ -11,7 +11,6 @@ import {
   GraphQLFloat,
   GraphQLInputObjectType
 } from 'graphql';
-import GraphQLDate from 'graphql-date';
 
 // import dynastyfftools types
 import {
@@ -75,7 +74,7 @@ const mutationType = new GraphQLObjectType({
         rotoworld_id: { type: GraphQLString },
         nfl_id: { type: GraphQLString },
         espn_id: { type: GraphQLString },
-        birthdate: { type: GraphQLDate },
+        birthdate: { type: GraphQLInt },
         status: { type: GraphQLString },
         armchair_id: { type: GraphQLString },
         stats_global_id: { type: GraphQLString },
@@ -86,8 +85,8 @@ const mutationType = new GraphQLObjectType({
         cbs_id: { type: GraphQLString },
         sportsdata_id: { type: GraphQLString },
         fp_id: { type: GraphQLString },
-        createdAt: { type: GraphQLDate },
-        updatedAt: { type: GraphQLDate },
+        createdAt: { type: GraphQLInt },
+        updatedAt: { type: GraphQLInt },
   	  },
   	  resolve: (_, args) => updatePlayer(args),
   	},

@@ -11,7 +11,6 @@ import {
   GraphQLFloat,
   GraphQLInputObjectType
 } from 'graphql';
-import GraphQLDate from 'graphql-date';
 
 const PlayerType = new GraphQLObjectType({
   name: 'Player',
@@ -81,7 +80,7 @@ const PlayerType = new GraphQLObjectType({
         resolve: ({ espn_id }) => espn_id,
     },
     birthdate: {
-        type: GraphQLDate,
+        type: GraphQLInt,
         resolve: ({ birthdate }) => birthdate,
     },
     status: {
@@ -125,11 +124,11 @@ const PlayerType = new GraphQLObjectType({
         resolve: ({ fp_id }) => fp_id,
     },
     createdAt: {
-        type: GraphQLDate,
+        type: GraphQLInt,
         resolve: ({ createdAt }) => createdAt,
     },
     updatedAt: {
-        type: GraphQLDate,
+        type: GraphQLInt,
         resolve: ({ updatedAt }) => updatedAt,
     },
   })
