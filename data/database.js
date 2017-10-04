@@ -17,7 +17,7 @@ export function createPlayer(player) {
 	});
   }
 
-  return db.players.insert({ player, createdAt: new Date() });
+  return db.players.insert({ player, createdAt: new Date().getTime(), updatedAt: new Date().getTime() });
 }
 
 export function removePlayer(_id) {
@@ -28,6 +28,8 @@ export function removePlayer(_id) {
 }
 
 export function updatePlayer(_id, player) {
+  const playerObject = player;
+  playerObject.updatedAt = new Date().getTime();
   let playerItem = {
 	player
   };

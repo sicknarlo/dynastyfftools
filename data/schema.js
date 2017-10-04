@@ -29,6 +29,10 @@ const playerType = new GraphQLObjectType({
         type: GraphQLString,
         resolve: ({ old_id }) => old_id,
     },
+    mfl_id: {
+        type: GraphQLString,
+        resolve: ({ mfl_id }) => mfl_id,
+    },
     name: {
         type: GraphQLString,
         resolve: ({ name }) => name,
@@ -121,10 +125,6 @@ const playerType = new GraphQLObjectType({
         type: GraphQLString,
         resolve: ({ sportsdata_id }) => sportsdata_id,
     },
-    inactive: {
-        type: GraphQLString,
-        resolve: ({ inactive }) => inactive,
-    },
     fp_id: {
         type: GraphQLString,
         resolve: ({ fp_id }) => fp_id,
@@ -132,7 +132,11 @@ const playerType = new GraphQLObjectType({
     createdAt: {
         type: GraphQLInt,
         resolve: ({ createdAt }) => createdAt,
-    }
+    },
+    updatedAt: {
+        type: GraphQLInt,
+        resolve: ({ updatedAt }) => updatedAt,
+    },
   })
 });
 
@@ -168,6 +172,7 @@ const mutationType = new GraphQLObjectType({
 	  args: {
 		_id: { type: new GraphQLNonNull(GraphQLString) },
         old_id: { type: GraphQLString },
+        mfl_id: { type: GraphQLString },
         name: { type: GraphQLString },
         position: { type: GraphQLString },
         team: { type: GraphQLString },
@@ -191,9 +196,9 @@ const mutationType = new GraphQLObjectType({
         jersey: { type: GraphQLString },
         cbs_id: { type: GraphQLString },
         sportsdata_id: { type: GraphQLString },
-        inactive: { type: GraphQLString },
         fp_id: { type: GraphQLString },
-        createdAt: { type: GraphQLInt }
+        createdAt: { type: GraphQLInt },
+        updatedAt: { type: GraphQLInt },
 	  },
 	  resolve: (_, { _id, player }) =>
 				  updateTodo(_id, player),
