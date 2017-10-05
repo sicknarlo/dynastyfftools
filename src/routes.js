@@ -11,7 +11,7 @@ import Header from './common/header';
 import Footer from './common/footer';
 
 /* Pages */
-
+import AllPlayers from './routes/AllPlayers';
 import Home from './routes/Home';
 import Home2 from './routes/Home2';
 
@@ -36,11 +36,8 @@ class App extends React.Component {
   }
 }
 
-const routes = (
+export default (
   <Route path='/' component={App}>
-    <IndexRoute component={Home} />
-    <Route path='/home2' component={Home2} />
+	  <IndexRoute component={AllPlayers} />
   </Route>
 );
-
-export default routes;

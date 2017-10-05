@@ -13,31 +13,30 @@ import { Link, withRouter } from 'react-router';
 @withRouter
 class ApplicationSidebar extends React.Component {
   handleChange(e) {
-    this._nav.search(e.target.value);
+	this._nav.search(e.target.value);
   }
 
   render() {
-    return (
-      <div>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <FormControl type='text' placeholder='Search...' onChange={::this.handleChange} className='sidebar-search' style={{border: 'none', background: 'none', margin: '10px 0 0 0', borderBottom: '1px solid #666', color: 'white'}} />
-              <div className='sidebar-nav-container'>
-                <SidebarNav style={{marginBottom: 0}} ref={(c) => this._nav = c}>
+	return (
+	  <div>
+		<Grid>
+		  <Row>
+			<Col xs={12}>
+			  <FormControl type='text' placeholder='Search...' onChange={::this.handleChange} className='sidebar-search' style={{border: 'none', background: 'none', margin: '10px 0 0 0', borderBottom: '1px solid #666', color: 'white'}} />
+			  <div className='sidebar-nav-container'>
+				<SidebarNav style={{marginBottom: 0}} ref={(c) => this._nav = c}>
 
-                  { /** Pages Section */ }
-                  <div className='sidebar-header'>PAGES</div>
+				  { /** Pages Section */ }
+				  <div className='sidebar-header'>PAGES</div>
 
-                  <SidebarNavItem glyph='icon-fontello-gauge' name='Home' href='/' />
-                  <SidebarNavItem glyph='icon-fontello-gauge' name='Home 2' href='/home2' />
-                </SidebarNav>
-              </div>
-            </Col>
-          </Row>
-        </Grid>
-      </div>
-    );
+				  <SidebarNavItem glyph='icon-outlined-todolist' name='All Players' href='/' />
+				</SidebarNav>
+			  </div>
+			</Col>
+		  </Row>
+		</Grid>
+	  </div>
+	);
   }
 }
 

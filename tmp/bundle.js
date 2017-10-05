@@ -54,7 +54,7 @@ require('source-map-support').install({environment: 'node'});
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(186);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(630);var _RubixAssetMiddleware=__webpack_require__(656);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(657);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(682);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','C:/Users/Nick/Dev/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','C:/Users/Nick/Dev/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','C:/Users/Nick/Dev/dynastyfftools/server.babel.js');}();;
+	'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(186);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(631);var _RubixAssetMiddleware=__webpack_require__(657);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(658);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(683);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/server.babel.js');}();;
 
 /***/ }),
 /* 2 */
@@ -20668,7 +20668,7 @@ require('source-map-support').install({environment: 'node'});
 /* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _classnames=__webpack_require__(263);var _classnames2=_interopRequireDefault(_classnames);var _reactRouter=__webpack_require__(264);var _rubix=__webpack_require__(265);var _sidebar=__webpack_require__(618);var _sidebar2=_interopRequireDefault(_sidebar);var _header=__webpack_require__(619);var _header2=_interopRequireDefault(_header);var _footer=__webpack_require__(620);var _footer2=_interopRequireDefault(_footer);var _Home=__webpack_require__(621);var _Home2=_interopRequireDefault(_Home);var _Home3=__webpack_require__(629);var _Home4=_interopRequireDefault(_Home3);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/* Pages */var App=function(_React$Component){(0,_inherits3.default)(App,_React$Component);function App(){(0,_classCallCheck3.default)(this,App);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}App.prototype.render=function render(){return _react2.default.createElement(_rubix.MainContainer,this.props,_react2.default.createElement(_sidebar2.default,null),_react2.default.createElement(_header2.default,null),_react2.default.createElement('div',{id:'body'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},this.props.children)))),_react2.default.createElement(_footer2.default,null));};return App;}(_react2.default.Component);/* Common Components */var routes=_react2.default.createElement(_reactRouter.Route,{path:'/',component:App},_react2.default.createElement(_reactRouter.IndexRoute,{component:_Home2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/home2',component:_Home4.default}));var _default=routes;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(App,'App','C:/Users/Nick/Dev/dynastyfftools/src/routes.js');__REACT_HOT_LOADER__.register(routes,'routes','C:/Users/Nick/Dev/dynastyfftools/src/routes.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/Nick/Dev/dynastyfftools/src/routes.js');}();;
+	'use strict';exports.__esModule=true;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _classnames=__webpack_require__(263);var _classnames2=_interopRequireDefault(_classnames);var _reactRouter=__webpack_require__(264);var _rubix=__webpack_require__(265);var _sidebar=__webpack_require__(618);var _sidebar2=_interopRequireDefault(_sidebar);var _header=__webpack_require__(619);var _header2=_interopRequireDefault(_header);var _footer=__webpack_require__(620);var _footer2=_interopRequireDefault(_footer);var _AllPlayers=__webpack_require__(621);var _AllPlayers2=_interopRequireDefault(_AllPlayers);var _Home=__webpack_require__(629);var _Home2=_interopRequireDefault(_Home);var _Home3=__webpack_require__(630);var _Home4=_interopRequireDefault(_Home3);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/* Common Components */var App=function(_React$Component){(0,_inherits3.default)(App,_React$Component);function App(){(0,_classCallCheck3.default)(this,App);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}App.prototype.render=function render(){return _react2.default.createElement(_rubix.MainContainer,this.props,_react2.default.createElement(_sidebar2.default,null),_react2.default.createElement(_header2.default,null),_react2.default.createElement('div',{id:'body'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},this.props.children)))),_react2.default.createElement(_footer2.default,null));};return App;}(_react2.default.Component);/* Pages */var _default=_react2.default.createElement(_reactRouter.Route,{path:'/',component:App},_react2.default.createElement(_reactRouter.IndexRoute,{component:_AllPlayers2.default}));exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(App,'App','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes.js');}();;
 
 /***/ }),
 /* 187 */
@@ -50234,25 +50234,25 @@ require('source-map-support').install({environment: 'node'});
 /* 618 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _class,_class2;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _rubix=__webpack_require__(265);var _reactRouter=__webpack_require__(264);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var ApplicationSidebar=(0,_reactRouter.withRouter)(_class=function(_React$Component){(0,_inherits3.default)(ApplicationSidebar,_React$Component);function ApplicationSidebar(){(0,_classCallCheck3.default)(this,ApplicationSidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}ApplicationSidebar.prototype.handleChange=function handleChange(e){this._nav.search(e.target.value);};ApplicationSidebar.prototype.render=function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement(_rubix.FormControl,{type:'text',placeholder:'Search...',onChange:this.handleChange.bind(this),className:'sidebar-search',style:{border:'none',background:'none',margin:'10px 0 0 0',borderBottom:'1px solid #666',color:'white'}}),_react2.default.createElement('div',{className:'sidebar-nav-container'},_react2.default.createElement(_rubix.SidebarNav,{style:{marginBottom:0},ref:function ref(c){return _this2._nav=c;}},_react2.default.createElement('div',{className:'sidebar-header'},'PAGES'),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-fontello-gauge',name:'Home',href:'/'}),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-fontello-gauge',name:'Home 2',href:'/home2'})))))));};return ApplicationSidebar;}(_react2.default.Component))||_class;var DummySidebar=function(_React$Component2){(0,_inherits3.default)(DummySidebar,_React$Component2);function DummySidebar(){(0,_classCallCheck3.default)(this,DummySidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}DummySidebar.prototype.render=function render(){return _react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('div',{className:'sidebar-header'},'DUMMY SIDEBAR'),_react2.default.createElement(_rubix.LoremIpsum,{query:'1p'}))));};return DummySidebar;}(_react2.default.Component);var SidebarContainer=(0,_reactRouter.withRouter)(_class2=function(_React$Component3){(0,_inherits3.default)(SidebarContainer,_React$Component3);function SidebarContainer(){(0,_classCallCheck3.default)(this,SidebarContainer);return(0,_possibleConstructorReturn3.default)(this,_React$Component3.apply(this,arguments));}SidebarContainer.prototype.render=function render(){return _react2.default.createElement('div',{id:'sidebar'},_react2.default.createElement('div',{id:'avatar'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,{className:'fg-white'},_react2.default.createElement(_rubix.Col,{xs:4,collapseRight:true},_react2.default.createElement('img',{src:'/imgs/app/avatars/avatar0.png',width:'40',height:'40'})),_react2.default.createElement(_rubix.Col,{xs:8,collapseLeft:true,id:'avatar-col'},_react2.default.createElement('div',{style:{top:23,fontSize:16,lineHeight:1,position:'relative'}},'Anna Sanchez'),_react2.default.createElement('div',null,_react2.default.createElement(_rubix.Progress,{id:'demo-progress',value:30,color:'#ffffff'}),_react2.default.createElement('a',{href:'#'},_react2.default.createElement(_rubix.Icon,{id:'demo-icon',bundle:'fontello',glyph:'lock-5'}))))))),_react2.default.createElement(_rubix.SidebarControls,null,_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'docs',sidebar:0}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chat-1',sidebar:1}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chart-pie-2',sidebar:2}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'th-list-2',sidebar:3}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'bell-5',sidebar:4})),_react2.default.createElement('div',{id:'sidebar-container'},_react2.default.createElement(_rubix.Sidebar,{sidebar:0},_react2.default.createElement(ApplicationSidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:1},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:2},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:3},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:4},_react2.default.createElement(DummySidebar,null))));};return SidebarContainer;}(_react2.default.Component))||_class2;exports.default=SidebarContainer;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(ApplicationSidebar,'ApplicationSidebar','C:/Users/Nick/Dev/dynastyfftools/src/common/sidebar.js');__REACT_HOT_LOADER__.register(DummySidebar,'DummySidebar','C:/Users/Nick/Dev/dynastyfftools/src/common/sidebar.js');__REACT_HOT_LOADER__.register(SidebarContainer,'SidebarContainer','C:/Users/Nick/Dev/dynastyfftools/src/common/sidebar.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _class,_class2;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _rubix=__webpack_require__(265);var _reactRouter=__webpack_require__(264);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var ApplicationSidebar=(0,_reactRouter.withRouter)(_class=function(_React$Component){(0,_inherits3.default)(ApplicationSidebar,_React$Component);function ApplicationSidebar(){(0,_classCallCheck3.default)(this,ApplicationSidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}ApplicationSidebar.prototype.handleChange=function handleChange(e){this._nav.search(e.target.value);};ApplicationSidebar.prototype.render=function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement(_rubix.FormControl,{type:'text',placeholder:'Search...',onChange:this.handleChange.bind(this),className:'sidebar-search',style:{border:'none',background:'none',margin:'10px 0 0 0',borderBottom:'1px solid #666',color:'white'}}),_react2.default.createElement('div',{className:'sidebar-nav-container'},_react2.default.createElement(_rubix.SidebarNav,{style:{marginBottom:0},ref:function ref(c){return _this2._nav=c;}},_react2.default.createElement('div',{className:'sidebar-header'},'PAGES'),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-outlined-todolist',name:'All Players',href:'/'})))))));};return ApplicationSidebar;}(_react2.default.Component))||_class;var DummySidebar=function(_React$Component2){(0,_inherits3.default)(DummySidebar,_React$Component2);function DummySidebar(){(0,_classCallCheck3.default)(this,DummySidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}DummySidebar.prototype.render=function render(){return _react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('div',{className:'sidebar-header'},'DUMMY SIDEBAR'),_react2.default.createElement(_rubix.LoremIpsum,{query:'1p'}))));};return DummySidebar;}(_react2.default.Component);var SidebarContainer=(0,_reactRouter.withRouter)(_class2=function(_React$Component3){(0,_inherits3.default)(SidebarContainer,_React$Component3);function SidebarContainer(){(0,_classCallCheck3.default)(this,SidebarContainer);return(0,_possibleConstructorReturn3.default)(this,_React$Component3.apply(this,arguments));}SidebarContainer.prototype.render=function render(){return _react2.default.createElement('div',{id:'sidebar'},_react2.default.createElement('div',{id:'avatar'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,{className:'fg-white'},_react2.default.createElement(_rubix.Col,{xs:4,collapseRight:true},_react2.default.createElement('img',{src:'/imgs/app/avatars/avatar0.png',width:'40',height:'40'})),_react2.default.createElement(_rubix.Col,{xs:8,collapseLeft:true,id:'avatar-col'},_react2.default.createElement('div',{style:{top:23,fontSize:16,lineHeight:1,position:'relative'}},'Anna Sanchez'),_react2.default.createElement('div',null,_react2.default.createElement(_rubix.Progress,{id:'demo-progress',value:30,color:'#ffffff'}),_react2.default.createElement('a',{href:'#'},_react2.default.createElement(_rubix.Icon,{id:'demo-icon',bundle:'fontello',glyph:'lock-5'}))))))),_react2.default.createElement(_rubix.SidebarControls,null,_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'docs',sidebar:0}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chat-1',sidebar:1}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chart-pie-2',sidebar:2}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'th-list-2',sidebar:3}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'bell-5',sidebar:4})),_react2.default.createElement('div',{id:'sidebar-container'},_react2.default.createElement(_rubix.Sidebar,{sidebar:0},_react2.default.createElement(ApplicationSidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:1},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:2},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:3},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:4},_react2.default.createElement(DummySidebar,null))));};return SidebarContainer;}(_react2.default.Component))||_class2;exports.default=SidebarContainer;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(ApplicationSidebar,'ApplicationSidebar','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/sidebar.js');__REACT_HOT_LOADER__.register(DummySidebar,'DummySidebar','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/sidebar.js');__REACT_HOT_LOADER__.register(SidebarContainer,'SidebarContainer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/sidebar.js');}();;
 
 /***/ }),
 /* 619 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(280);var _reactDom2=_interopRequireDefault(_reactDom);var _classnames=__webpack_require__(263);var _classnames2=_interopRequireDefault(_classnames);var _reactRouter=__webpack_require__(264);var _L20n=__webpack_require__(443);var _L20n2=_interopRequireDefault(_L20n);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Brand=function(_React$Component){(0,_inherits3.default)(Brand,_React$Component);function Brand(){(0,_classCallCheck3.default)(this,Brand);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Brand.prototype.render=function render(){return _react2.default.createElement(_rubix.Navbar.Header,this.props,_react2.default.createElement(_rubix.Navbar.Brand,{tabIndex:'-1'},_react2.default.createElement('a',{href:'#'},_react2.default.createElement('img',{src:'/imgs/common/logo.png',alt:'rubix',width:'111',height:'28'}))));};return Brand;}(_react2.default.Component);var HeaderNavigation=(0,_reactRouter.withRouter)(_class=function(_React$Component2){(0,_inherits3.default)(HeaderNavigation,_React$Component2);function HeaderNavigation(){(0,_classCallCheck3.default)(this,HeaderNavigation);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}HeaderNavigation.prototype.render=function render(){return _react2.default.createElement(_rubix.Nav,{pullRight:true},_react2.default.createElement(_rubix.Nav,null,_react2.default.createElement(_rubix.NavItem,{className:'logout',href:'#'},_react2.default.createElement(_rubix.Icon,{bundle:'fontello',glyph:'off-1'}))));};return HeaderNavigation;}(_react2.default.Component))||_class;var Header=function(_React$Component3){(0,_inherits3.default)(Header,_React$Component3);function Header(){(0,_classCallCheck3.default)(this,Header);return(0,_possibleConstructorReturn3.default)(this,_React$Component3.apply(this,arguments));}Header.prototype.render=function render(){return _react2.default.createElement(_rubix.Grid,(0,_extends3.default)({id:'navbar'},this.props),_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement(_rubix.Navbar,{fixedTop:true,fluid:true,id:'rubix-nav-header'},_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:3,visible:'xs'},_react2.default.createElement(_rubix.SidebarBtn,null)),_react2.default.createElement(_rubix.Col,{xs:6,sm:4},_react2.default.createElement(Brand,null)),_react2.default.createElement(_rubix.Col,{xs:3,sm:8,collapseRight:true,className:'text-right'},_react2.default.createElement(HeaderNavigation,null)))))));};return Header;}(_react2.default.Component);exports.default=Header;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Brand,'Brand','C:/Users/Nick/Dev/dynastyfftools/src/common/header.js');__REACT_HOT_LOADER__.register(HeaderNavigation,'HeaderNavigation','C:/Users/Nick/Dev/dynastyfftools/src/common/header.js');__REACT_HOT_LOADER__.register(Header,'Header','C:/Users/Nick/Dev/dynastyfftools/src/common/header.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(280);var _reactDom2=_interopRequireDefault(_reactDom);var _classnames=__webpack_require__(263);var _classnames2=_interopRequireDefault(_classnames);var _reactRouter=__webpack_require__(264);var _L20n=__webpack_require__(443);var _L20n2=_interopRequireDefault(_L20n);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Brand=function(_React$Component){(0,_inherits3.default)(Brand,_React$Component);function Brand(){(0,_classCallCheck3.default)(this,Brand);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Brand.prototype.render=function render(){return _react2.default.createElement(_rubix.Navbar.Header,this.props,_react2.default.createElement(_rubix.Navbar.Brand,{tabIndex:'-1'},_react2.default.createElement('a',{href:'#'},_react2.default.createElement('img',{src:'/imgs/common/logo.png',alt:'rubix',width:'111',height:'28'}))));};return Brand;}(_react2.default.Component);var HeaderNavigation=(0,_reactRouter.withRouter)(_class=function(_React$Component2){(0,_inherits3.default)(HeaderNavigation,_React$Component2);function HeaderNavigation(){(0,_classCallCheck3.default)(this,HeaderNavigation);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}HeaderNavigation.prototype.render=function render(){return _react2.default.createElement(_rubix.Nav,{pullRight:true},_react2.default.createElement(_rubix.Nav,null,_react2.default.createElement(_rubix.NavItem,{className:'logout',href:'#'},_react2.default.createElement(_rubix.Icon,{bundle:'fontello',glyph:'off-1'}))));};return HeaderNavigation;}(_react2.default.Component))||_class;var Header=function(_React$Component3){(0,_inherits3.default)(Header,_React$Component3);function Header(){(0,_classCallCheck3.default)(this,Header);return(0,_possibleConstructorReturn3.default)(this,_React$Component3.apply(this,arguments));}Header.prototype.render=function render(){return _react2.default.createElement(_rubix.Grid,(0,_extends3.default)({id:'navbar'},this.props),_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement(_rubix.Navbar,{fixedTop:true,fluid:true,id:'rubix-nav-header'},_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:3,visible:'xs'},_react2.default.createElement(_rubix.SidebarBtn,null)),_react2.default.createElement(_rubix.Col,{xs:6,sm:4},_react2.default.createElement(Brand,null)),_react2.default.createElement(_rubix.Col,{xs:3,sm:8,collapseRight:true,className:'text-right'},_react2.default.createElement(HeaderNavigation,null)))))));};return Header;}(_react2.default.Component);exports.default=Header;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Brand,'Brand','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/header.js');__REACT_HOT_LOADER__.register(HeaderNavigation,'HeaderNavigation','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/header.js');__REACT_HOT_LOADER__.register(Header,'Header','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/header.js');}();;
 
 /***/ }),
 /* 620 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Footer=function(_React$Component){(0,_inherits3.default)(Footer,_React$Component);function Footer(){var _temp,_this,_ret;(0,_classCallCheck3.default)(this,Footer);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=(0,_possibleConstructorReturn3.default)(this,_React$Component.call.apply(_React$Component,[this].concat(args))),_this),_this.state={version:0},_temp),(0,_possibleConstructorReturn3.default)(_this,_ret);}Footer.prototype.componentDidMount=function componentDidMount(){this.setState({version:document.body.getAttribute('data-version')});};Footer.prototype.render=function render(){var year=new Date().getFullYear();return _react2.default.createElement('div',{id:'footer-container'},_react2.default.createElement(_rubix.Grid,{id:'footer',className:'text-center'},_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('div',null,'\xA9 ',year,' SketchPixy Creative - v',this.state.version)))));};return Footer;}(_react2.default.Component);exports.default=Footer;;var _temp2=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Footer,'Footer','C:/Users/Nick/Dev/dynastyfftools/src/common/footer.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Footer=function(_React$Component){(0,_inherits3.default)(Footer,_React$Component);function Footer(){var _temp,_this,_ret;(0,_classCallCheck3.default)(this,Footer);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=(0,_possibleConstructorReturn3.default)(this,_React$Component.call.apply(_React$Component,[this].concat(args))),_this),_this.state={version:0},_temp),(0,_possibleConstructorReturn3.default)(_this,_ret);}Footer.prototype.componentDidMount=function componentDidMount(){this.setState({version:document.body.getAttribute('data-version')});};Footer.prototype.render=function render(){var year=new Date().getFullYear();return _react2.default.createElement('div',{id:'footer-container'},_react2.default.createElement(_rubix.Grid,{id:'footer',className:'text-center'},_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('div',null,'\xA9 ',year,' SketchPixy Creative - v',this.state.version)))));};return Footer;}(_react2.default.Component);exports.default=Footer;;var _temp2=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Footer,'Footer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/common/footer.js');}();;
 
 /***/ }),
 /* 621 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getGreeting('Hello, World!'));};Home.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,this.props.greetings.hello)))))));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','C:/Users/Nick/Dev/dynastyfftools/src/routes/Home.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var AllPlayers=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(AllPlayers,_React$Component);function AllPlayers(){(0,_classCallCheck3.default)(this,AllPlayers);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}AllPlayers.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getPlayers());};AllPlayers.prototype.render=function render(){var _props=this.props,players=_props.players,dispatch=_props.dispatch;var result=players.result,error=players.error;var errors=error?_react2.default.createElement(_rubix.Alert,{danger:true,dismissible:true},error.map(function(_ref,i){var message=_ref.message;return _react2.default.createElement('div',{key:i},message);})):null;return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,{style:{padding:0,paddingBottom:25}},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('h3',null,'Player List:'),errors,typeof result.map==='function'&&result.map(function(player){return _react2.default.createElement('div',null,player.name);})))))));};return AllPlayers;}(_react2.default.Component))||_class);exports.default=AllPlayers;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(AllPlayers,'AllPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes/AllPlayers.js');}();;
 
 /***/ }),
 /* 622 */
@@ -50270,7 +50270,7 @@ require('source-map-support').install({environment: 'node'});
 /* 624 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _actionTypes=__webpack_require__(625);var _axios=__webpack_require__(627);var _axios2=_interopRequireDefault(_axios);var _graphql=__webpack_require__(628);var _graphql2=_interopRequireDefault(_graphql);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GraphQLEndpoint=_graphql2.default.development.endpoint;if(false){GraphQLEndpoint=_graphql2.default.production.endpoint;}function getPlayers(){var query='\n\tquery getPlayers {\n\t  players\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.ALL_PLAYERS,error:result.data.errors});return;}dispatch({type:_actionTypes.ALL_PLAYERS,result:result.data.data.players});});};}function getPlayer(variables){var query='\n\tquery getPlayer($_id: String, $name: String) {\n\t  player(_id: $_id, name: $name)\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.SINGLE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.SINGLE_PLAYER,result:result.data.data.player});});};}function createPlayer(variables){var query='\n\tmutation createPlayerMutation($player: Object!) {\n\t  createTodo(player: $player) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.CREATE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.CREATE_PLAYER,result:result.data.data.createPlayer});});};}function updatePlayer(variables){var query='\n\tmutation updatePlayerMutation($_id: String!, $player: Object!) {\n\t  updatePlayer(_id: $_id, player: $player) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.EDIT_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.EDIT_PLAYER,result:result.data.data.updateTodo});});};}function removePlayer(variables){var query='\n\tmutation removePlayerMutation($_id: String!) {\n\t  removePlayer(_id: $_id) {\n\t\t_id\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.REMOVE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.REMOVE_PLAYER,result:result.data.data.removeTodo});});};}module.exports={getPlayer:getPlayer,getPlayers:getPlayers,createPlayer:createPlayer,updatePlayer:updatePlayer,removePlayer:removePlayer};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(GraphQLEndpoint,'GraphQLEndpoint','C:/Users/Nick/Dev/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/Nick/Dev/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/Nick/Dev/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/Nick/Dev/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/Nick/Dev/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/Nick/Dev/dynastyfftools/src/redux/actions/players.js');}();;
+	'use strict';var _actionTypes=__webpack_require__(625);var _axios=__webpack_require__(627);var _axios2=_interopRequireDefault(_axios);var _graphql=__webpack_require__(628);var _graphql2=_interopRequireDefault(_graphql);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GraphQLEndpoint=_graphql2.default.development.endpoint;if(false){GraphQLEndpoint=_graphql2.default.production.endpoint;}function getPlayers(){var query='\n\tquery getPlayers {\n\t  players\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.ALL_PLAYERS,error:result.data.errors});return;}dispatch({type:_actionTypes.ALL_PLAYERS,result:result.data.data.players});});};}function getPlayer(variables){var query='\n\tquery getPlayer($_id: String, $name: String) {\n\t  player(_id: $_id, name: $name)\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.SINGLE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.SINGLE_PLAYER,result:result.data.data.player});});};}function createPlayer(variables){var query='\n\tmutation createPlayerMutation($player: Object!) {\n\t  createPlayer(player: $player) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.CREATE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.CREATE_PLAYER,result:result.data.data.createPlayer});});};}function updatePlayer(variables){var query='\n\tmutation updatePlayerMutation(\n    $_id: String!,\n    $old_id: String,\n    $mfl_id: String,\n    $name: String,\n    $position: String,\n    $team: String,\n    $draft_year: String,\n    $twitter_username: String,\n    $stats_id: String,\n    $weight: String,\n    $college: String,\n    $draft_round: String,\n    $height: String,\n    $rotoworld_id: String,\n    $nfl_id: String,\n    $espn_id: String,\n    $birthdate: Integer,\n    $status: String,\n    $armchair_id: String,\n    $stats_global_id: String,\n    $kffl_id: String,\n    $draft_team: String,\n    $draft_pick: String,\n    $jersey: String,\n    $cbs_id: String,\n    $sportsdata_id: String,\n    $fp_id: String,\n  ) {\n\t  updatePlayer(\n      _id: $_id\n      old_id: $old_id\n      mfl_id: $mfl_id\n      name: $name\n      position: $position\n      team: $team\n      draft_year: $draft_year\n      twitter_username: $twitter_username\n      stats_id: $stats_id\n      weight: $weight\n      college: $college\n      draft_round: $draft_round\n      height: $height\n      rotoworld_id: $rotoworld_id\n      nfl_id: $nfl_id\n      espn_id: $espn_id\n      birthdate: $birthdate\n      status: $status\n      armchair_id: $armchair_id\n      stats_global_id: $stats_global_id\n      kffl_id: $kffl_id\n      draft_team: $draft_team\n      draft_pick: $draft_pick\n      jersey: $jersey\n      cbs_id: $cbs_id\n      sportsdata_id: $sportsdata_id\n      fp_id: $fp_id\n    ) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.EDIT_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.EDIT_PLAYER,result:result.data.data.updatePlayer});});};}function removePlayer(variables){var query='\n\tmutation removePlayerMutation($_id: String!) {\n\t  removePlayer(_id: $_id) {\n\t\t_id\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.REMOVE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.REMOVE_PLAYER,result:result.data.data.removePlayer});});};}module.exports={getPlayer:getPlayer,getPlayers:getPlayers,createPlayer:createPlayer,updatePlayer:updatePlayer,removePlayer:removePlayer};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(GraphQLEndpoint,'GraphQLEndpoint','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');}();;
 
 /***/ }),
 /* 625 */
@@ -50300,10 +50300,16 @@ require('source-map-support').install({environment: 'node'});
 /* 629 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getGreeting('Greetings from Rubix :)'));};Home.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,this.props.greetings.hello)))))));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','C:/Users/Nick/Dev/dynastyfftools/src/routes/Home2.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getGreeting('Hello, World!'));};Home.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,this.props.greetings.hello)))))));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes/Home.js');}();;
 
 /***/ }),
 /* 630 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getGreeting('Greetings from Rubix :)'));};Home.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,this.props.greetings.hello)))))));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes/Home2.js');}();;
+
+/***/ }),
+/* 631 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50361,35 +50367,35 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _reactRouter = __webpack_require__(264);
 	
-	var _reactHotLoader = __webpack_require__(631);
+	var _reactHotLoader = __webpack_require__(632);
 	
-	var _reactRouterScroll = __webpack_require__(632);
+	var _reactRouterScroll = __webpack_require__(633);
 	
 	var _reactRouterScroll2 = _interopRequireDefault(_reactRouterScroll);
 	
 	var _reactRedux = __webpack_require__(622);
 	
-	var _redux = __webpack_require__(643);
+	var _redux = __webpack_require__(644);
 	
-	var _reactRouterRedux = __webpack_require__(644);
+	var _reactRouterRedux = __webpack_require__(645);
 	
-	var _reduxThunk = __webpack_require__(645);
+	var _reduxThunk = __webpack_require__(646);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reduxFetchData = __webpack_require__(646);
+	var _reduxFetchData = __webpack_require__(647);
 	
-	var _utils = __webpack_require__(647);
+	var _utils = __webpack_require__(648);
 	
-	var _onRouterSetup = __webpack_require__(651);
+	var _onRouterSetup = __webpack_require__(652);
 	
 	var _onRouterSetup2 = _interopRequireDefault(_onRouterSetup);
 	
-	var _onRouterUpdate = __webpack_require__(653);
+	var _onRouterUpdate = __webpack_require__(654);
 	
 	var _onRouterUpdate2 = _interopRequireDefault(_onRouterUpdate);
 	
-	var _checkScroll = __webpack_require__(654);
+	var _checkScroll = __webpack_require__(655);
 	
 	var _checkScroll2 = _interopRequireDefault(_checkScroll);
 	
@@ -50580,13 +50586,13 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ }),
-/* 631 */
+/* 632 */
 /***/ (function(module, exports) {
 
 	module.exports = require("react-hot-loader");
 
 /***/ }),
-/* 632 */
+/* 633 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50598,7 +50604,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ScrollBehaviorContainer = __webpack_require__(633);
+	var _ScrollBehaviorContainer = __webpack_require__(634);
 	
 	var _ScrollBehaviorContainer2 = _interopRequireDefault(_ScrollBehaviorContainer);
 	
@@ -50621,7 +50627,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = exports['default'];
 
 /***/ }),
-/* 633 */
+/* 634 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50632,7 +50638,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ScrollBehavior = __webpack_require__(634);
+	var _ScrollBehavior = __webpack_require__(635);
 	
 	var _ScrollBehavior2 = _interopRequireDefault(_ScrollBehavior);
 	
@@ -50713,36 +50719,36 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 634 */
+/* 635 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _off = __webpack_require__(635);
+	var _off = __webpack_require__(636);
 	
 	var _off2 = _interopRequireDefault(_off);
 	
-	var _on = __webpack_require__(636);
+	var _on = __webpack_require__(637);
 	
 	var _on2 = _interopRequireDefault(_on);
 	
-	var _scrollLeft = __webpack_require__(637);
+	var _scrollLeft = __webpack_require__(638);
 	
 	var _scrollLeft2 = _interopRequireDefault(_scrollLeft);
 	
-	var _scrollTop = __webpack_require__(639);
+	var _scrollTop = __webpack_require__(640);
 	
 	var _scrollTop2 = _interopRequireDefault(_scrollTop);
 	
-	var _requestAnimationFrame = __webpack_require__(640);
+	var _requestAnimationFrame = __webpack_require__(641);
 	
 	var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 	
-	var _Actions = __webpack_require__(641);
+	var _Actions = __webpack_require__(642);
 	
-	var _DOMStateStorage = __webpack_require__(642);
+	var _DOMStateStorage = __webpack_require__(643);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -50920,7 +50926,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = exports['default'];
 
 /***/ }),
-/* 635 */
+/* 636 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50942,7 +50948,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = off;
 
 /***/ }),
-/* 636 */
+/* 637 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50963,11 +50969,11 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = on;
 
 /***/ }),
-/* 637 */
+/* 638 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var getWindow = __webpack_require__(638);
+	var getWindow = __webpack_require__(639);
 	
 	module.exports = function scrollTop(node, val) {
 	  var win = getWindow(node);
@@ -50978,7 +50984,7 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ }),
-/* 638 */
+/* 639 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -50988,11 +50994,11 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ }),
-/* 639 */
+/* 640 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var getWindow = __webpack_require__(638);
+	var getWindow = __webpack_require__(639);
 	
 	module.exports = function scrollTop(node, val) {
 	  var win = getWindow(node);
@@ -51003,7 +51009,7 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ }),
-/* 640 */
+/* 641 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51054,7 +51060,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = compatRaf;
 
 /***/ }),
-/* 641 */
+/* 642 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -51081,7 +51087,7 @@ require('source-map-support').install({environment: 'node'});
 	var POP = exports.POP = 'POP';
 
 /***/ }),
-/* 642 */
+/* 643 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51171,25 +51177,25 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ }),
-/* 643 */
+/* 644 */
 /***/ (function(module, exports) {
 
 	module.exports = require("redux");
 
 /***/ }),
-/* 644 */
+/* 645 */
 /***/ (function(module, exports) {
 
 	module.exports = require("react-router-redux");
 
 /***/ }),
-/* 645 */
+/* 646 */
 /***/ (function(module, exports) {
 
 	module.exports = require("redux-thunk");
 
 /***/ }),
-/* 646 */
+/* 647 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51198,7 +51204,7 @@ require('source-map-support').install({environment: 'node'});
 	  value: true
 	});
 	
-	var _utils = __webpack_require__(647);
+	var _utils = __webpack_require__(648);
 	
 	Object.defineProperty(exports, 'fetchDataOnServer', {
 	  enumerable: true,
@@ -51207,7 +51213,7 @@ require('source-map-support').install({environment: 'node'});
 	  }
 	});
 	
-	var _module = __webpack_require__(648);
+	var _module = __webpack_require__(649);
 	
 	Object.defineProperty(exports, 'reducer', {
 	  enumerable: true,
@@ -51216,7 +51222,7 @@ require('source-map-support').install({environment: 'node'});
 	  }
 	});
 	
-	var _fetchData = __webpack_require__(650);
+	var _fetchData = __webpack_require__(651);
 	
 	Object.defineProperty(exports, 'FetchData', {
 	  enumerable: true,
@@ -51228,7 +51234,7 @@ require('source-map-support').install({environment: 'node'});
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 647 */
+/* 648 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51245,7 +51251,7 @@ require('source-map-support').install({environment: 'node'});
 	exports.flattenComponents = flattenComponents;
 	exports.fetchDataOnServer = fetchDataOnServer;
 	
-	var _module = __webpack_require__(648);
+	var _module = __webpack_require__(649);
 	
 	/**
 	 *
@@ -51325,7 +51331,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 648 */
+/* 649 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51339,7 +51345,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	exports.handleDoneFetching = handleDoneFetching;
 	
-	var _reduxActions = __webpack_require__(649);
+	var _reduxActions = __webpack_require__(650);
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
@@ -51356,13 +51362,13 @@ require('source-map-support').install({environment: 'node'});
 	exports.default = reducer;
 
 /***/ }),
-/* 649 */
+/* 650 */
 /***/ (function(module, exports) {
 
 	module.exports = require("redux-actions");
 
 /***/ }),
-/* 650 */
+/* 651 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51378,15 +51384,15 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _redux = __webpack_require__(643);
+	var _redux = __webpack_require__(644);
 	
 	var _reactRedux = __webpack_require__(622);
 	
 	var _reactRouter = __webpack_require__(264);
 	
-	var _module = __webpack_require__(648);
+	var _module = __webpack_require__(649);
 	
-	var _utils = __webpack_require__(647);
+	var _utils = __webpack_require__(648);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -51466,7 +51472,7 @@ require('source-map-support').install({environment: 'node'});
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(FetchData);
 
 /***/ }),
-/* 651 */
+/* 652 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51480,7 +51486,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	__webpack_require__(652);
+	__webpack_require__(653);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -51545,7 +51551,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ }),
-/* 652 */
+/* 653 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -51772,7 +51778,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ }),
-/* 653 */
+/* 654 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51818,7 +51824,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ }),
-/* 654 */
+/* 655 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51832,11 +51838,11 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	var _onRouterUpdate = __webpack_require__(653);
+	var _onRouterUpdate = __webpack_require__(654);
 	
 	var _onRouterUpdate2 = _interopRequireDefault(_onRouterUpdate);
 	
-	var _ga = __webpack_require__(655);
+	var _ga = __webpack_require__(656);
 	
 	var _ga2 = _interopRequireDefault(_ga);
 	
@@ -51864,7 +51870,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ }),
-/* 655 */
+/* 656 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51891,7 +51897,7 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ }),
-/* 656 */
+/* 657 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51941,70 +51947,70 @@ require('source-map-support').install({environment: 'node'});
 	var static_path = 'http://' + hostname + ':' + port;
 
 /***/ }),
-/* 657 */
+/* 658 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(658);var _types=__webpack_require__(659);var _database=__webpack_require__(662);// import dynastyfftools types
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(659);var _types=__webpack_require__(660);var _database=__webpack_require__(663);// import dynastyfftools types
 	var queryType=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{player:{type:_types.PlayerType,args:{_id:{type:_graphql.GraphQLString},name:{type:_graphql.GraphQLString}},resolve:function resolve(_,args){return(0,_database.getPlayer)(args);}},players:{type:new _graphql.GraphQLList(_types.PlayerType),resolve:function resolve(){return(0,_database.getPlayers)();}}};}});// import db operations
 	// import GraphQL types
-	var mutationType=new _graphql.GraphQLObjectType({name:'Mutation',fields:function fields(){return{createPlayer:{type:_types.PlayerType,args:{player:{type:_types.PlayerInputType}},resolve:function resolve(_,_ref){var player=_ref.player;return(0,_database.createPlayer)(player);}},updatePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)},old_id:{type:_graphql.GraphQLString},mfl_id:{type:_graphql.GraphQLString},name:{type:_graphql.GraphQLString},position:{type:_graphql.GraphQLString},team:{type:_graphql.GraphQLString},draft_year:{type:_graphql.GraphQLString},twitter_username:{type:_graphql.GraphQLString},stats_id:{type:_graphql.GraphQLString},weight:{type:_graphql.GraphQLString},college:{type:_graphql.GraphQLString},draft_round:{type:_graphql.GraphQLString},height:{type:_graphql.GraphQLString},rotoworld_id:{type:_graphql.GraphQLString},nfl_id:{type:_graphql.GraphQLString},espn_id:{type:_graphql.GraphQLString},birthdate:{type:_graphql.GraphQLInt},status:{type:_graphql.GraphQLString},armchair_id:{type:_graphql.GraphQLString},stats_global_id:{type:_graphql.GraphQLString},kffl_id:{type:_graphql.GraphQLString},draft_team:{type:_graphql.GraphQLString},draft_pick:{type:_graphql.GraphQLString},jersey:{type:_graphql.GraphQLString},cbs_id:{type:_graphql.GraphQLString},sportsdata_id:{type:_graphql.GraphQLString},fp_id:{type:_graphql.GraphQLString},createdAt:{type:_graphql.GraphQLInt},updatedAt:{type:_graphql.GraphQLInt}},resolve:function resolve(_,args){return(0,_database.updatePlayer)(args);}},removePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref2){var _id=_ref2._id;return(0,_database.removePlayer)(_id);}}};}});var _default=new _graphql.GraphQLSchema({query:queryType,mutation:mutationType});exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(queryType,'queryType','C:/Users/Nick/Dev/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(mutationType,'mutationType','C:/Users/Nick/Dev/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/Nick/Dev/dynastyfftools/data/schema.js');}();;
+	var mutationType=new _graphql.GraphQLObjectType({name:'Mutation',fields:function fields(){return{createPlayer:{type:_types.PlayerType,args:{player:{type:_types.PlayerInputType}},resolve:function resolve(_,_ref){var player=_ref.player;return(0,_database.createPlayer)(player);}},updatePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)},old_id:{type:_graphql.GraphQLString},mfl_id:{type:_graphql.GraphQLString},name:{type:_graphql.GraphQLString},position:{type:_graphql.GraphQLString},team:{type:_graphql.GraphQLString},draft_year:{type:_graphql.GraphQLString},twitter_username:{type:_graphql.GraphQLString},stats_id:{type:_graphql.GraphQLString},weight:{type:_graphql.GraphQLString},college:{type:_graphql.GraphQLString},draft_round:{type:_graphql.GraphQLString},height:{type:_graphql.GraphQLString},rotoworld_id:{type:_graphql.GraphQLString},nfl_id:{type:_graphql.GraphQLString},espn_id:{type:_graphql.GraphQLString},birthdate:{type:_graphql.GraphQLInt},status:{type:_graphql.GraphQLString},armchair_id:{type:_graphql.GraphQLString},stats_global_id:{type:_graphql.GraphQLString},kffl_id:{type:_graphql.GraphQLString},draft_team:{type:_graphql.GraphQLString},draft_pick:{type:_graphql.GraphQLString},jersey:{type:_graphql.GraphQLString},cbs_id:{type:_graphql.GraphQLString},sportsdata_id:{type:_graphql.GraphQLString},fp_id:{type:_graphql.GraphQLString},createdAt:{type:_graphql.GraphQLInt},updatedAt:{type:_graphql.GraphQLInt}},resolve:function resolve(_,args){return(0,_database.updatePlayer)(args);}},removePlayer:{type:_types.PlayerType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref2){var _id=_ref2._id;return(0,_database.removePlayer)(_id);}}};}});var _default=new _graphql.GraphQLSchema({query:queryType,mutation:mutationType});exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(queryType,'queryType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(mutationType,'mutationType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/schema.js');}();;
 
 /***/ }),
-/* 658 */
+/* 659 */
 /***/ (function(module, exports) {
 
 	module.exports = require("graphql");
 
 /***/ }),
-/* 659 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';var _PlayerType=__webpack_require__(660);var _PlayerType2=_interopRequireDefault(_PlayerType);var _PlayerInputType=__webpack_require__(661);var _PlayerInputType2=_interopRequireDefault(_PlayerInputType);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports={PlayerType:_PlayerType2.default,PlayerInputType:_PlayerInputType2.default};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
-
-/***/ }),
 /* 660 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(658);var PlayerType=new _graphql.GraphQLObjectType({name:'Player',fields:function fields(){return{_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var _id=_ref._id;return _id;}},old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var old_id=_ref2.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var mfl_id=_ref3.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var name=_ref4.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var position=_ref5.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var team=_ref6.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var draft_year=_ref7.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var twitter_username=_ref8.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var stats_id=_ref9.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var weight=_ref10.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var college=_ref11.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var draft_round=_ref12.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var height=_ref13.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var rotoworld_id=_ref14.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var nfl_id=_ref15.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref16){var espn_id=_ref16.espn_id;return espn_id;}},birthdate:{type:_graphql.GraphQLInt,resolve:function resolve(_ref17){var birthdate=_ref17.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var status=_ref18.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var armchair_id=_ref19.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var stats_global_id=_ref20.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var kffl_id=_ref21.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_team=_ref22.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var draft_pick=_ref23.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var jersey=_ref24.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var cbs_id=_ref25.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var sportsdata_id=_ref26.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref27){var fp_id=_ref27.fp_id;return fp_id;}},createdAt:{type:_graphql.GraphQLInt,resolve:function resolve(_ref28){var createdAt=_ref28.createdAt;return createdAt;}},updatedAt:{type:_graphql.GraphQLInt,resolve:function resolve(_ref29){var updatedAt=_ref29.updatedAt;return updatedAt;}}};}});// import GraphQL types
-	var _default=PlayerType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerType,'PlayerType','C:/Users/Nick/Dev/dynastyfftools/data/types/PlayerType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/Nick/Dev/dynastyfftools/data/types/PlayerType.js');}();;
+	'use strict';var _PlayerType=__webpack_require__(661);var _PlayerType2=_interopRequireDefault(_PlayerType);var _PlayerInputType=__webpack_require__(662);var _PlayerInputType2=_interopRequireDefault(_PlayerInputType);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports={PlayerType:_PlayerType2.default,PlayerInputType:_PlayerInputType2.default};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ }),
 /* 661 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(658);var PlayerInputType=new _graphql.GraphQLInputObjectType({name:'PlayerInput',description:'Input player payload',fields:function fields(){return{old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var old_id=_ref.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var mfl_id=_ref2.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var name=_ref3.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var position=_ref4.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var team=_ref5.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var draft_year=_ref6.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var twitter_username=_ref7.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var stats_id=_ref8.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var weight=_ref9.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var college=_ref10.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var draft_round=_ref11.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var height=_ref12.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var rotoworld_id=_ref13.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var nfl_id=_ref14.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var espn_id=_ref15.espn_id;return espn_id;}},birthdate:{type:_graphql.GraphQLInt,resolve:function resolve(_ref16){var birthdate=_ref16.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref17){var status=_ref17.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var armchair_id=_ref18.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var stats_global_id=_ref19.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var kffl_id=_ref20.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var draft_team=_ref21.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_pick=_ref22.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var jersey=_ref23.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var cbs_id=_ref24.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var sportsdata_id=_ref25.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var fp_id=_ref26.fp_id;return fp_id;}}};}});// import GraphQL types
-	var _default=PlayerInputType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerInputType,'PlayerInputType','C:/Users/Nick/Dev/dynastyfftools/data/types/PlayerInputType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/Nick/Dev/dynastyfftools/data/types/PlayerInputType.js');}();;
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(659);var PlayerType=new _graphql.GraphQLObjectType({name:'Player',fields:function fields(){return{_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var _id=_ref._id;return _id;}},old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var old_id=_ref2.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var mfl_id=_ref3.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var name=_ref4.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var position=_ref5.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var team=_ref6.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var draft_year=_ref7.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var twitter_username=_ref8.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var stats_id=_ref9.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var weight=_ref10.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var college=_ref11.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var draft_round=_ref12.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var height=_ref13.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var rotoworld_id=_ref14.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var nfl_id=_ref15.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref16){var espn_id=_ref16.espn_id;return espn_id;}},birthdate:{type:_graphql.GraphQLInt,resolve:function resolve(_ref17){var birthdate=_ref17.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var status=_ref18.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var armchair_id=_ref19.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var stats_global_id=_ref20.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var kffl_id=_ref21.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_team=_ref22.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var draft_pick=_ref23.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var jersey=_ref24.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var cbs_id=_ref25.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var sportsdata_id=_ref26.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref27){var fp_id=_ref27.fp_id;return fp_id;}},createdAt:{type:_graphql.GraphQLInt,resolve:function resolve(_ref28){var createdAt=_ref28.createdAt;return createdAt;}},updatedAt:{type:_graphql.GraphQLInt,resolve:function resolve(_ref29){var updatedAt=_ref29.updatedAt;return updatedAt;}}};}});// import GraphQL types
+	var _default=PlayerType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerType,'PlayerType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerType.js');}();;
 
 /***/ }),
 /* 662 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _objectWithoutProperties2=__webpack_require__(291);var _objectWithoutProperties3=_interopRequireDefault(_objectWithoutProperties2);var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _promise=__webpack_require__(663);var _promise2=_interopRequireDefault(_promise);exports.getPlayer=getPlayer;exports.getPlayers=getPlayers;exports.createPlayer=createPlayer;exports.removePlayer=removePlayer;exports.updatePlayer=updatePlayer;var _promisedMongo=__webpack_require__(679);var _promisedMongo2=_interopRequireDefault(_promisedMongo);var _utilities=__webpack_require__(680);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var db=(0,_promisedMongo2.default)('dynastyfftools',['players']);function getPlayer(_ref){var _ref$_id=_ref._id,_id=_ref$_id===undefined?null:_ref$_id,_ref$name=_ref.name,name=_ref$name===undefined?null:_ref$name;// Fetch player by _id if id
-	if(_id)return db.players.findOne({_id:_promisedMongo2.default.ObjectId(_id)});// Fetch player by name if name
-	if(name)return db.players.findOne({name:name});}function getPlayers(){return db.players.find({});}function createPlayer(player){if(!player){return new _promise2.default(function(resolve,reject){reject('"player" cannot be empty');});}return db.players.insert((0,_extends3.default)({},player,{createdAt:(0,_utilities.convertFromEpoch)(new Date()),updatedAt:(0,_utilities.convertFromEpoch)(new Date())}));}function removePlayer(_id){return db.players.remove({_id:_promisedMongo2.default.ObjectId(_id)}).then(function(){return{_id:_id};});}function updatePlayer(data){var _id=data._id,playerData=(0,_objectWithoutProperties3.default)(data,['_id']);playerData.updatedAt=(0,_utilities.convertFromEpoch)(new Date());if(!_id)return new _promise2.default(function(resolve,reject){reject('"_id" required to update player\n');});return db.players.findAndModify({new:true,// return the newly modified document
-	query:{_id:_promisedMongo2.default.ObjectId(_id)},update:{$set:playerData}}).then(function(_ref2){var value=_ref2.value;return value;});};var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(db,'db','C:/Users/Nick/Dev/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/Nick/Dev/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/Nick/Dev/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/Nick/Dev/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/Nick/Dev/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/Nick/Dev/dynastyfftools/data/database.js');}();;
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(659);var PlayerInputType=new _graphql.GraphQLInputObjectType({name:'PlayerInput',description:'Input player payload',fields:function fields(){return{old_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var old_id=_ref.old_id;return old_id;}},mfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var mfl_id=_ref2.mfl_id;return mfl_id;}},name:{type:_graphql.GraphQLString,resolve:function resolve(_ref3){var name=_ref3.name;return name;}},position:{type:_graphql.GraphQLString,resolve:function resolve(_ref4){var position=_ref4.position;return position;}},team:{type:_graphql.GraphQLString,resolve:function resolve(_ref5){var team=_ref5.team;return team;}},draft_year:{type:_graphql.GraphQLString,resolve:function resolve(_ref6){var draft_year=_ref6.draft_year;return draft_year;}},twitter_username:{type:_graphql.GraphQLString,resolve:function resolve(_ref7){var twitter_username=_ref7.twitter_username;return twitter_username;}},stats_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref8){var stats_id=_ref8.stats_id;return stats_id;}},weight:{type:_graphql.GraphQLString,resolve:function resolve(_ref9){var weight=_ref9.weight;return weight;}},college:{type:_graphql.GraphQLString,resolve:function resolve(_ref10){var college=_ref10.college;return college;}},draft_round:{type:_graphql.GraphQLString,resolve:function resolve(_ref11){var draft_round=_ref11.draft_round;return draft_round;}},height:{type:_graphql.GraphQLString,resolve:function resolve(_ref12){var height=_ref12.height;return height;}},rotoworld_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref13){var rotoworld_id=_ref13.rotoworld_id;return rotoworld_id;}},nfl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref14){var nfl_id=_ref14.nfl_id;return nfl_id;}},espn_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref15){var espn_id=_ref15.espn_id;return espn_id;}},birthdate:{type:_graphql.GraphQLInt,resolve:function resolve(_ref16){var birthdate=_ref16.birthdate;return birthdate;}},status:{type:_graphql.GraphQLString,resolve:function resolve(_ref17){var status=_ref17.status;return status;}},armchair_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref18){var armchair_id=_ref18.armchair_id;return armchair_id;}},stats_global_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref19){var stats_global_id=_ref19.stats_global_id;return stats_global_id;}},kffl_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref20){var kffl_id=_ref20.kffl_id;return kffl_id;}},draft_team:{type:_graphql.GraphQLString,resolve:function resolve(_ref21){var draft_team=_ref21.draft_team;return draft_team;}},draft_pick:{type:_graphql.GraphQLString,resolve:function resolve(_ref22){var draft_pick=_ref22.draft_pick;return draft_pick;}},jersey:{type:_graphql.GraphQLString,resolve:function resolve(_ref23){var jersey=_ref23.jersey;return jersey;}},cbs_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref24){var cbs_id=_ref24.cbs_id;return cbs_id;}},sportsdata_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref25){var sportsdata_id=_ref25.sportsdata_id;return sportsdata_id;}},fp_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref26){var fp_id=_ref26.fp_id;return fp_id;}}};}});// import GraphQL types
+	var _default=PlayerInputType;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(PlayerInputType,'PlayerInputType','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerInputType.js');__REACT_HOT_LOADER__.register(_default,'default','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/types/PlayerInputType.js');}();;
 
 /***/ }),
 /* 663 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(664), __esModule: true };
+	'use strict';exports.__esModule=true;var _objectWithoutProperties2=__webpack_require__(291);var _objectWithoutProperties3=_interopRequireDefault(_objectWithoutProperties2);var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _promise=__webpack_require__(664);var _promise2=_interopRequireDefault(_promise);exports.getPlayer=getPlayer;exports.getPlayers=getPlayers;exports.createPlayer=createPlayer;exports.removePlayer=removePlayer;exports.updatePlayer=updatePlayer;var _promisedMongo=__webpack_require__(680);var _promisedMongo2=_interopRequireDefault(_promisedMongo);var _utilities=__webpack_require__(681);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var db=(0,_promisedMongo2.default)('dynastyfftools',['players']);function getPlayer(_ref){var _ref$_id=_ref._id,_id=_ref$_id===undefined?null:_ref$_id,_ref$name=_ref.name,name=_ref$name===undefined?null:_ref$name;// Fetch player by _id if id
+	if(_id)return db.players.findOne({_id:_promisedMongo2.default.ObjectId(_id)});// Fetch player by name if name
+	if(name)return db.players.findOne({name:name});}function getPlayers(){return db.players.find({});}function createPlayer(player){if(!player){return new _promise2.default(function(resolve,reject){reject('"player" cannot be empty');});}return db.players.insert((0,_extends3.default)({},player,{createdAt:(0,_utilities.convertFromEpoch)(new Date()),updatedAt:(0,_utilities.convertFromEpoch)(new Date())}));}function removePlayer(_id){return db.players.remove({_id:_promisedMongo2.default.ObjectId(_id)}).then(function(){return{_id:_id};});}function updatePlayer(data){var _id=data._id,playerData=(0,_objectWithoutProperties3.default)(data,['_id']);playerData.updatedAt=(0,_utilities.convertFromEpoch)(new Date());if(!_id)return new _promise2.default(function(resolve,reject){reject('"_id" required to update player\n');});return db.players.findAndModify({new:true,// return the newly modified document
+	query:{_id:_promisedMongo2.default.ObjectId(_id)},update:{$set:playerData}}).then(function(_ref2){var value=_ref2.value;return value;});};var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(db,'db','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/data/database.js');}();;
 
 /***/ }),
 /* 664 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = { "default": __webpack_require__(665), __esModule: true };
+
+/***/ }),
+/* 665 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	__webpack_require__(252);
 	__webpack_require__(192);
 	__webpack_require__(235);
-	__webpack_require__(665);
-	__webpack_require__(677);
+	__webpack_require__(666);
 	__webpack_require__(678);
+	__webpack_require__(679);
 	module.exports = __webpack_require__(4).Promise;
 
 
 /***/ }),
-/* 665 */
+/* 666 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52015,14 +52021,14 @@ require('source-map-support').install({environment: 'node'});
 	var $export = __webpack_require__(198);
 	var isObject = __webpack_require__(205);
 	var aFunction = __webpack_require__(201);
-	var anInstance = __webpack_require__(666);
-	var forOf = __webpack_require__(667);
-	var speciesConstructor = __webpack_require__(668);
-	var task = __webpack_require__(669).set;
-	var microtask = __webpack_require__(671)();
-	var newPromiseCapabilityModule = __webpack_require__(672);
-	var perform = __webpack_require__(673);
-	var promiseResolve = __webpack_require__(674);
+	var anInstance = __webpack_require__(667);
+	var forOf = __webpack_require__(668);
+	var speciesConstructor = __webpack_require__(669);
+	var task = __webpack_require__(670).set;
+	var microtask = __webpack_require__(672)();
+	var newPromiseCapabilityModule = __webpack_require__(673);
+	var perform = __webpack_require__(674);
+	var promiseResolve = __webpack_require__(675);
 	var PROMISE = 'Promise';
 	var TypeError = global.TypeError;
 	var process = global.process;
@@ -52192,7 +52198,7 @@ require('source-map-support').install({environment: 'node'});
 	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
 	    this._n = false;          // <- notify
 	  };
-	  Internal.prototype = __webpack_require__(675)($Promise.prototype, {
+	  Internal.prototype = __webpack_require__(676)($Promise.prototype, {
 	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
 	    then: function then(onFulfilled, onRejected) {
 	      var reaction = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -52224,7 +52230,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
 	__webpack_require__(231)($Promise, PROMISE);
-	__webpack_require__(676)(PROMISE);
+	__webpack_require__(677)(PROMISE);
 	Wrapper = __webpack_require__(4)[PROMISE];
 	
 	// statics
@@ -52290,7 +52296,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 666 */
+/* 667 */
 /***/ (function(module, exports) {
 
 	module.exports = function (it, Constructor, name, forbiddenField) {
@@ -52301,7 +52307,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 667 */
+/* 668 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var ctx = __webpack_require__(200);
@@ -52332,7 +52338,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 668 */
+/* 669 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -52347,11 +52353,11 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 669 */
+/* 670 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var ctx = __webpack_require__(200);
-	var invoke = __webpack_require__(670);
+	var invoke = __webpack_require__(671);
 	var html = __webpack_require__(230);
 	var cel = __webpack_require__(209);
 	var global = __webpack_require__(199);
@@ -52437,7 +52443,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 670 */
+/* 671 */
 /***/ (function(module, exports) {
 
 	// fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -52459,11 +52465,11 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 671 */
+/* 672 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var global = __webpack_require__(199);
-	var macrotask = __webpack_require__(669).set;
+	var macrotask = __webpack_require__(670).set;
 	var Observer = global.MutationObserver || global.WebKitMutationObserver;
 	var process = global.process;
 	var Promise = global.Promise;
@@ -52533,7 +52539,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 672 */
+/* 673 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52557,7 +52563,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 673 */
+/* 674 */
 /***/ (function(module, exports) {
 
 	module.exports = function (exec) {
@@ -52570,12 +52576,12 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 674 */
+/* 675 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(204);
 	var isObject = __webpack_require__(205);
-	var newPromiseCapability = __webpack_require__(672);
+	var newPromiseCapability = __webpack_require__(673);
 	
 	module.exports = function (C, x) {
 	  anObject(C);
@@ -52588,7 +52594,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 675 */
+/* 676 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var hide = __webpack_require__(202);
@@ -52601,7 +52607,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 676 */
+/* 677 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52621,7 +52627,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 677 */
+/* 678 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-promise-finally
@@ -52629,8 +52635,8 @@ require('source-map-support').install({environment: 'node'});
 	var $export = __webpack_require__(198);
 	var core = __webpack_require__(4);
 	var global = __webpack_require__(199);
-	var speciesConstructor = __webpack_require__(668);
-	var promiseResolve = __webpack_require__(674);
+	var speciesConstructor = __webpack_require__(669);
+	var promiseResolve = __webpack_require__(675);
 	
 	$export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 	  var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -52647,14 +52653,14 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 678 */
+/* 679 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// https://github.com/tc39/proposal-promise-try
 	var $export = __webpack_require__(198);
-	var newPromiseCapability = __webpack_require__(672);
-	var perform = __webpack_require__(673);
+	var newPromiseCapability = __webpack_require__(673);
+	var perform = __webpack_require__(674);
 	
 	$export($export.S, 'Promise', { 'try': function (callbackfn) {
 	  var promiseCapability = newPromiseCapability.f(this);
@@ -52665,38 +52671,38 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ }),
-/* 679 */
+/* 680 */
 /***/ (function(module, exports) {
 
 	module.exports = require("promised-mongo");
 
 /***/ }),
-/* 680 */
+/* 681 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _time=__webpack_require__(681);var _time2=_interopRequireDefault(_time);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_time2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
-
-/***/ }),
-/* 681 */
-/***/ (function(module, exports) {
-
-	"use strict";function convertFromEpoch(epoch){return(epoch-epoch%1000)/1000;}module.exports={convertFromEpoch:convertFromEpoch};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(convertFromEpoch,"convertFromEpoch","C:/Users/Nick/Dev/dynastyfftools/src/utilities/time.js");}();;
+	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _time=__webpack_require__(682);var _time2=_interopRequireDefault(_time);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_time2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ }),
 /* 682 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _players=__webpack_require__(683);var _players2=_interopRequireDefault(_players);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_players2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+	"use strict";function convertFromEpoch(epoch){return(epoch-epoch%1000)/1000;}module.exports={convertFromEpoch:convertFromEpoch};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(convertFromEpoch,"convertFromEpoch","C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/utilities/time.js");}();;
 
 /***/ }),
 /* 683 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';var _extends2=__webpack_require__(267);var _extends3=_interopRequireDefault(_extends2);var _players=__webpack_require__(684);var _players2=_interopRequireDefault(_players);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_players2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+
+/***/ }),
+/* 684 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';var _assign=__webpack_require__(268);var _assign2=_interopRequireDefault(_assign);var _actionTypes=__webpack_require__(625);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function getIndexOfPlayerItem(action,state){var index=-1,data=action.result;for(var i=0;i<state.result.length;i++){if(state.result[i]._id===data._id){index=i;break;}}return index;}function players(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[];var action=arguments[1];if(action.error){return{result:state.result,error:action.error};}switch(action.type){case _actionTypes.SINGLE_PLAYER:case _actionTypes.ALL_PLAYERS:return{result:action.result};case _actionTypes.CREATE_PLAYER:return{result:[].concat(state.result,[action.result])};case _actionTypes.EDIT_PLAYER:var index=getIndexOfPlayerItem(action,state);// player not found in state object so return original state
 	if(index===-1)return state;// player found! return new state
 	return{result:[].concat(state.result.slice(0,index),[(0,_assign2.default)({},state.result[index],action.result)],state.result.slice(index+1))};case _actionTypes.REMOVE_PLAYER:var index=getIndexOfTodoItem(action,state);// player not found in state object so return original state
 	if(index===-1)return state;// player found! don't include it in the new state
-	return{result:[].concat(state.result.slice(0,index),state.result.slice(index+1))};default:return state;}}module.exports={players:players};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(getIndexOfPlayerItem,'getIndexOfPlayerItem','C:/Users/Nick/Dev/dynastyfftools/src/redux/reducers/players.js');__REACT_HOT_LOADER__.register(players,'players','C:/Users/Nick/Dev/dynastyfftools/src/redux/reducers/players.js');}();;
+	return{result:[].concat(state.result.slice(0,index),state.result.slice(index+1))};default:return state;}}module.exports={players:players};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(getIndexOfPlayerItem,'getIndexOfPlayerItem','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/reducers/players.js');__REACT_HOT_LOADER__.register(players,'players','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/reducers/players.js');}();;
 
 /***/ })
 /******/ ]);
