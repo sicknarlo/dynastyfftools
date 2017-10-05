@@ -31,20 +31,17 @@ export function removePlayer(_id) {
 				 });
 }
 
-export function updatePlayer(player) {
-  let playerItem = {
-	  ...player,
-    updatedAt: convertFromEpoch(new Date()),
-  };
+export function updatePlayer(data) {
+  let { _id, ...playerData } = data;
 
-  const id = player._id;
+  playerData.updatedAt = convertFromEpoch(new Date());
 
-  if (!id) return new Promise((resolve, reject) => {
+  if (!_id) return new Promise((resolve, reject) => {
 	  reject(`"_id" required to update player\n`);
   });
 
   return db.players.findAndModify({
 			new: true, // return the newly modified document
 			query: { _id: pmongo.ObjectId(_id) },
-			update: { $set: playerItem } }).then(({ value }) => value);
+			update: { $set: playerData } }).then(({ value }) => value);
 }
