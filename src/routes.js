@@ -21,12 +21,10 @@ class App extends React.Component {
       <MainContainer {...this.props}>
         <Sidebar />
         <Header />
-        <div id='body'>
+        <div id="body">
           <Grid>
             <Row>
-              <Col xs={12}>
-                {this.props.children}
-              </Col>
+              <Col xs={12}>{this.props.children}</Col>
             </Row>
           </Grid>
         </div>
@@ -37,7 +35,7 @@ class App extends React.Component {
 }
 
 export default (
-  <Route path='/' component={App}>
-	  <IndexRoute component={AllPlayers} />
+  <Route path="/" component={App}>
+    <IndexRoute component={AllPlayers} />
   </Route>
 );

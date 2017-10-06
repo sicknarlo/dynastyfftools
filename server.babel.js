@@ -9,10 +9,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
 import routes from './src/routes';
-import {
-  setupReducers,
-  renderHTMLString,
-} from '@sketchpixy/rubix/lib/node/redux-router';
+import { setupReducers, renderHTMLString } from '@sketchpixy/rubix/lib/node/redux-router';
 import RubixAssetMiddleware from '@sketchpixy/rubix/lib/node/RubixAssetMiddleware';
 
 import schema from './data/schema.js';
@@ -48,11 +45,14 @@ function renderHTML(req, res) {
   });
 }
 
-app.use('/graphql', graphQLHTTP({
-  schema,
-  pretty: true,
-  graphiql: true,
-}));
+app.use(
+  '/graphql',
+  graphQLHTTP({
+    schema,
+    pretty: true,
+    graphiql: true
+  })
+);
 
 app.get('*', RubixAssetMiddleware('ltr'), (req, res, next) => {
   renderHTML(req, res);

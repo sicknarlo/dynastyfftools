@@ -50252,7 +50252,7 @@ require('source-map-support').install({environment: 'node'});
 /* 621 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var AllPlayers=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(AllPlayers,_React$Component);function AllPlayers(){(0,_classCallCheck3.default)(this,AllPlayers);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}AllPlayers.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getPlayers());};AllPlayers.prototype.render=function render(){var _props=this.props,players=_props.players,dispatch=_props.dispatch;var result=players.result,error=players.error;var errors=error?_react2.default.createElement(_rubix.Alert,{danger:true,dismissible:true},error.map(function(_ref,i){var message=_ref.message;return _react2.default.createElement('div',{key:i},message);})):null;return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,{style:{padding:0,paddingBottom:25}},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('h3',null,'Player List:'),errors,typeof result.map==='function'&&result.map(function(player){return _react2.default.createElement('div',null,player.name);})))))));};return AllPlayers;}(_react2.default.Component))||_class);exports.default=AllPlayers;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(AllPlayers,'AllPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes/AllPlayers.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(187);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(188);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(255);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(622);var _actions=__webpack_require__(623);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(265);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var AllPlayers=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(AllPlayers,_React$Component);function AllPlayers(){(0,_classCallCheck3.default)(this,AllPlayers);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}AllPlayers.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getPlayers());};AllPlayers.prototype.render=function render(){var _props=this.props,players=_props.players,dispatch=_props.dispatch;var result=players.result,error=players.error;var errors=error?_react2.default.createElement(_rubix.Alert,{danger:true,dismissible:true},error.map(function(_ref,i){var message=_ref.message;return _react2.default.createElement('div',{key:i},message);})):null;return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,{style:{padding:0,paddingBottom:25}},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('h3',null,'Player List:'),errors))))));};return AllPlayers;}(_react2.default.Component))||_class);exports.default=AllPlayers;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(AllPlayers,'AllPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/routes/AllPlayers.js');}();;
 
 /***/ }),
 /* 622 */
@@ -50270,7 +50270,7 @@ require('source-map-support').install({environment: 'node'});
 /* 624 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _actionTypes=__webpack_require__(625);var _axios=__webpack_require__(627);var _axios2=_interopRequireDefault(_axios);var _graphql=__webpack_require__(628);var _graphql2=_interopRequireDefault(_graphql);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GraphQLEndpoint=_graphql2.default.development.endpoint;if(false){GraphQLEndpoint=_graphql2.default.production.endpoint;}function getPlayers(){var query='\n\tquery getPlayers {\n\t  players\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.ALL_PLAYERS,error:result.data.errors});return;}dispatch({type:_actionTypes.ALL_PLAYERS,result:result.data.data.players});});};}function getPlayer(variables){var query='\n\tquery getPlayer($_id: String, $name: String) {\n\t  player(_id: $_id, name: $name)\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.SINGLE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.SINGLE_PLAYER,result:result.data.data.player});});};}function createPlayer(variables){var query='\n\tmutation createPlayerMutation($player: Object!) {\n\t  createPlayer(player: $player) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.CREATE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.CREATE_PLAYER,result:result.data.data.createPlayer});});};}function updatePlayer(variables){var query='\n\tmutation updatePlayerMutation(\n    $_id: String!,\n    $old_id: String,\n    $mfl_id: String,\n    $name: String,\n    $position: String,\n    $team: String,\n    $draft_year: String,\n    $twitter_username: String,\n    $stats_id: String,\n    $weight: String,\n    $college: String,\n    $draft_round: String,\n    $height: String,\n    $rotoworld_id: String,\n    $nfl_id: String,\n    $espn_id: String,\n    $birthdate: Integer,\n    $status: String,\n    $armchair_id: String,\n    $stats_global_id: String,\n    $kffl_id: String,\n    $draft_team: String,\n    $draft_pick: String,\n    $jersey: String,\n    $cbs_id: String,\n    $sportsdata_id: String,\n    $fp_id: String,\n  ) {\n\t  updatePlayer(\n      _id: $_id\n      old_id: $old_id\n      mfl_id: $mfl_id\n      name: $name\n      position: $position\n      team: $team\n      draft_year: $draft_year\n      twitter_username: $twitter_username\n      stats_id: $stats_id\n      weight: $weight\n      college: $college\n      draft_round: $draft_round\n      height: $height\n      rotoworld_id: $rotoworld_id\n      nfl_id: $nfl_id\n      espn_id: $espn_id\n      birthdate: $birthdate\n      status: $status\n      armchair_id: $armchair_id\n      stats_global_id: $stats_global_id\n      kffl_id: $kffl_id\n      draft_team: $draft_team\n      draft_pick: $draft_pick\n      jersey: $jersey\n      cbs_id: $cbs_id\n      sportsdata_id: $sportsdata_id\n      fp_id: $fp_id\n    ) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.EDIT_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.EDIT_PLAYER,result:result.data.data.updatePlayer});});};}function removePlayer(variables){var query='\n\tmutation removePlayerMutation($_id: String!) {\n\t  removePlayer(_id: $_id) {\n\t\t_id\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.REMOVE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.REMOVE_PLAYER,result:result.data.data.removePlayer});});};}module.exports={getPlayer:getPlayer,getPlayers:getPlayers,createPlayer:createPlayer,updatePlayer:updatePlayer,removePlayer:removePlayer};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(GraphQLEndpoint,'GraphQLEndpoint','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');}();;
+	'use strict';var _actionTypes=__webpack_require__(625);var _axios=__webpack_require__(627);var _axios2=_interopRequireDefault(_axios);var _graphql=__webpack_require__(628);var _graphql2=_interopRequireDefault(_graphql);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GraphQLEndpoint=_graphql2.default.development.endpoint;if(false){GraphQLEndpoint=_graphql2.default.production.endpoint;}function getPlayers(){var query='\n\tquery getPlayers {\n\t  players\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query}).then(function(result){if(result.data.errors){console.log('merp');dispatch({type:_actionTypes.ALL_PLAYERS,error:result.data.errors});return;}dispatch({type:_actionTypes.ALL_PLAYERS,result:result.data.data.players});}).catch(function(err){return console.log('err',err);});};}function getPlayer(variables){var query='\n\tquery getPlayer($_id: String, $name: String) {\n\t  player(_id: $_id, name: $name)\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.SINGLE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.SINGLE_PLAYER,result:result.data.data.player});});};}function createPlayer(variables){var query='\n\tmutation createPlayerMutation($player: Object!) {\n\t  createPlayer(player: $player) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.CREATE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.CREATE_PLAYER,result:result.data.data.createPlayer});});};}function updatePlayer(variables){var query='\n\tmutation updatePlayerMutation(\n    $_id: String!,\n    $old_id: String,\n    $mfl_id: String,\n    $name: String,\n    $position: String,\n    $team: String,\n    $draft_year: String,\n    $twitter_username: String,\n    $stats_id: String,\n    $weight: String,\n    $college: String,\n    $draft_round: String,\n    $height: String,\n    $rotoworld_id: String,\n    $nfl_id: String,\n    $espn_id: String,\n    $birthdate: Integer,\n    $status: String,\n    $armchair_id: String,\n    $stats_global_id: String,\n    $kffl_id: String,\n    $draft_team: String,\n    $draft_pick: String,\n    $jersey: String,\n    $cbs_id: String,\n    $sportsdata_id: String,\n    $fp_id: String,\n  ) {\n\t  updatePlayer(\n      _id: $_id\n      old_id: $old_id\n      mfl_id: $mfl_id\n      name: $name\n      position: $position\n      team: $team\n      draft_year: $draft_year\n      twitter_username: $twitter_username\n      stats_id: $stats_id\n      weight: $weight\n      college: $college\n      draft_round: $draft_round\n      height: $height\n      rotoworld_id: $rotoworld_id\n      nfl_id: $nfl_id\n      espn_id: $espn_id\n      birthdate: $birthdate\n      status: $status\n      armchair_id: $armchair_id\n      stats_global_id: $stats_global_id\n      kffl_id: $kffl_id\n      draft_team: $draft_team\n      draft_pick: $draft_pick\n      jersey: $jersey\n      cbs_id: $cbs_id\n      sportsdata_id: $sportsdata_id\n      fp_id: $fp_id\n    ) {\n\t\t_id\n\t\tplayer\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.EDIT_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.EDIT_PLAYER,result:result.data.data.updatePlayer});});};}function removePlayer(variables){var query='\n\tmutation removePlayerMutation($_id: String!) {\n\t  removePlayer(_id: $_id) {\n\t\t_id\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.REMOVE_PLAYER,error:result.data.errors});return;}dispatch({type:_actionTypes.REMOVE_PLAYER,result:result.data.data.removePlayer});});};}module.exports={getPlayer:getPlayer,getPlayers:getPlayers,createPlayer:createPlayer,updatePlayer:updatePlayer,removePlayer:removePlayer};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(GraphQLEndpoint,'GraphQLEndpoint','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayers,'getPlayers','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(getPlayer,'getPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(createPlayer,'createPlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(updatePlayer,'updatePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');__REACT_HOT_LOADER__.register(removePlayer,'removePlayer','C:/Users/nsarlo/Dev/rubix/redux/dynastyfftools/src/redux/actions/players.js');}();;
 
 /***/ }),
 /* 625 */
@@ -50314,7 +50314,7 @@ require('source-map-support').install({environment: 'node'});
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	
@@ -50403,46 +50403,58 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
 	
 	if ((0, _isBrowser2.default)()) {
 	  (0, _onRouterSetup2.default)();
 	}
 	
-	var WrapperComponent = function (_React$Component) {
+	var WrapperComponent = (function(_React$Component) {
 	  (0, _inherits3.default)(WrapperComponent, _React$Component);
 	
 	  function WrapperComponent() {
 	    (0, _classCallCheck3.default)(this, WrapperComponent);
-	    return (0, _possibleConstructorReturn3.default)(this, (WrapperComponent.__proto__ || (0, _getPrototypeOf2.default)(WrapperComponent)).apply(this, arguments));
+	    return (0, _possibleConstructorReturn3.default)(
+	      this,
+	      (WrapperComponent.__proto__ || (0, _getPrototypeOf2.default)(WrapperComponent)).apply(
+	        this,
+	        arguments
+	      )
+	    );
 	  }
 	
-	  (0, _createClass3.default)(WrapperComponent, [{
-	    key: 'render',
-	    value: function render() {
-	      return this.props.children;
+	  (0, _createClass3.default)(WrapperComponent, [
+	    {
+	      key: 'render',
+	      value: function render() {
+	        return this.props.children;
+	      }
 	    }
-	  }]);
+	  ]);
 	  return WrapperComponent;
-	}(_react2.default.Component);
+	})(_react2.default.Component);
 	
 	var isRouterSet = false,
-	    history,
-	    reducer,
-	    store,
-	    routes;
+	  history,
+	  reducer,
+	  store,
+	  routes;
 	
 	function setupReducers(reducers) {
-	  var appReducer = (0, _redux.combineReducers)((0, _extends3.default)({}, reducers, {
-	    fetching: _reduxFetchData.reducer,
-	    routing: _reactRouterRedux.routerReducer
-	  }));
+	  var appReducer = (0, _redux.combineReducers)(
+	    (0, _extends3.default)({}, reducers, {
+	      fetching: _reduxFetchData.reducer,
+	      routing: _reactRouterRedux.routerReducer
+	    })
+	  );
 	
 	  reducer = function reducer(state, action) {
 	    if (action.type === 'USER_LOGOUT') {
 	      var _state = state,
-	          _fetching = _state.fetching,
-	          routing = _state.routing;
+	        _fetching = _state.fetching,
+	        routing = _state.routing;
 	      // we reset the state here!
 	
 	      state = { fetching: _fetching, routing: routing };
@@ -50463,7 +50475,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	function getData() {
 	  var element = preloadedData();
-	  return element ? JSON.parse(element.textContent || "{}") : '';
+	  return element ? JSON.parse(element.textContent || '{}') : '';
 	}
 	
 	var middlewares = [_reduxThunk2.default];
@@ -50478,9 +50490,14 @@ require('source-map-support').install({environment: 'node'});
 	}
 	
 	function createStoreWithMiddleware() {
-	  return (0, _redux.compose)(_redux.applyMiddleware.apply(undefined, (0, _toConsumableArray3.default)(middlewares)), (0, _isBrowser2.default)() && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : function (f) {
-	    return f;
-	  })(_redux.createStore);
+	  return (0, _redux.compose)(
+	    _redux.applyMiddleware.apply(undefined, (0, _toConsumableArray3.default)(middlewares)),
+	    (0, _isBrowser2.default)() && typeof window.devToolsExtension !== 'undefined'
+	      ? window.devToolsExtension()
+	      : function(f) {
+	          return f;
+	        }
+	  )(_redux.createStore);
 	}
 	
 	function createReduxStore(initialState) {
@@ -50515,22 +50532,24 @@ require('source-map-support').install({environment: 'node'});
 	        { store: store, key: 'provider' },
 	        _react2.default.createElement(
 	          _reactRouter.Router,
-	          { history: history,
-	            render: onFetchData },
+	          {
+	            history: history,
+	            render: onFetchData
+	          },
 	          Component
 	        )
 	      );
 	    }
 	
-	    _reactDom2.default.render(_react2.default.createElement(
-	      _reactHotLoader.AppContainer,
-	      null,
+	    _reactDom2.default.render(
 	      _react2.default.createElement(
-	        WrapperComponent,
+	        _reactHotLoader.AppContainer,
 	        null,
-	        routes
-	      )
-	    ), document.getElementById('app-container'), onRender);
+	        _react2.default.createElement(WrapperComponent, null, routes)
+	      ),
+	      document.getElementById('app-container'),
+	      onRender
+	    );
 	  }
 	}
 	
@@ -50538,7 +50557,11 @@ require('source-map-support').install({environment: 'node'});
 	  var store = createReduxStore();
 	
 	  // in server
-	  (0, _reactRouter.match)({ routes: routes, location: req.url }, function (error, redirectLocation, renderProps) {
+	  (0, _reactRouter.match)({ routes: routes, location: req.url }, function(
+	    error,
+	    redirectLocation,
+	    renderProps
+	  ) {
 	    if (!renderProps) {
 	      if (error) {
 	        callback(error);
@@ -50550,40 +50573,45 @@ require('source-map-support').install({environment: 'node'});
 	      return;
 	    }
 	
-	    (0, _reduxFetchData.fetchDataOnServer)(renderProps, store).then(function () {
-	      if (error) {
-	        callback(error);
-	      } else if (redirectLocation) {
-	        callback(null, redirectLocation);
-	      } else if (renderProps) {
-	        var content = null;
+	    (0, _reduxFetchData.fetchDataOnServer)(renderProps, store)
+	      .then(function() {
+	        if (error) {
+	          callback(error);
+	        } else if (redirectLocation) {
+	          callback(null, redirectLocation);
+	        } else if (renderProps) {
+	          var content = null;
 	
-	        try {
-	          content = _server2.default.renderToString(_react2.default.createElement(
-	            _reactHotLoader.AppContainer,
-	            null,
-	            _react2.default.createElement(
-	              _reactRedux.Provider,
-	              { store: store, key: 'provider' },
-	              _react2.default.createElement(_reactRouter.RouterContext, renderProps)
-	            )
-	          ));
-	        } catch (e) {
-	          // do nothing
+	          try {
+	            content = _server2.default.renderToString(
+	              _react2.default.createElement(
+	                _reactHotLoader.AppContainer,
+	                null,
+	                _react2.default.createElement(
+	                  _reactRedux.Provider,
+	                  { store: store, key: 'provider' },
+	                  _react2.default.createElement(_reactRouter.RouterContext, renderProps)
+	                )
+	              )
+	            );
+	          } catch (e) {
+	            // do nothing
+	          }
+	
+	          callback(null, null, {
+	            content: content,
+	            data: store.getState()
+	          });
+	        } else {
+	          callback({
+	            message: 'Not found'
+	          });
 	        }
-	
-	        callback(null, null, {
-	          content: content,
-	          data: store.getState()
-	        });
-	      } else {
-	        callback({
-	          message: 'Not found'
-	        });
-	      }
-	    }).catch(callback);
+	      })
+	      .catch(callback);
 	  });
 	}
+
 
 /***/ }),
 /* 632 */

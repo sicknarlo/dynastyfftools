@@ -3,7 +3,7 @@ import {
   EDIT_PLAYER,
   CREATE_PLAYER,
   SINGLE_PLAYER,
-  REMOVE_PLAYER,
+  REMOVE_PLAYER
 } from './actionTypes';
 
 import axios from 'axios';
@@ -24,22 +24,26 @@ function getPlayers() {
   `;
 
   return dispatch => {
-	return axios.post(GraphQLEndpoint, {
-	  query
-	}).then((result) => {
-	  if (result.data.errors) {
-		dispatch({
-		  type: ALL_PLAYERS,
-		  error: result.data.errors,
-		})
-		return;
-	  }
+    return axios
+      .post(GraphQLEndpoint, {
+        query
+      })
+      .then(result => {
+        if (result.data.errors) {
+          console.log('merp');
+          dispatch({
+            type: ALL_PLAYERS,
+            error: result.data.errors
+          });
+          return;
+        }
 
-	  dispatch({
-		type: ALL_PLAYERS,
-		result: result.data.data.players,
-	  });
-	});
+        dispatch({
+          type: ALL_PLAYERS,
+          result: result.data.data.players
+        });
+      })
+      .catch(err => console.log('err', err));
   };
 }
 
@@ -51,23 +55,25 @@ function getPlayer(variables) {
   `;
 
   return dispatch => {
-	return axios.post(GraphQLEndpoint, {
-	  query,
-	  variables,
-	}).then((result) => {
-	  if (result.data.errors) {
-		dispatch({
-		  type: SINGLE_PLAYER,
-		  error: result.data.errors,
-		});
-		return;
-	  }
+    return axios
+      .post(GraphQLEndpoint, {
+        query,
+        variables
+      })
+      .then(result => {
+        if (result.data.errors) {
+          dispatch({
+            type: SINGLE_PLAYER,
+            error: result.data.errors
+          });
+          return;
+        }
 
-	  dispatch({
-		type: SINGLE_PLAYER,
-		result: result.data.data.player,
-	  });
-	})
+        dispatch({
+          type: SINGLE_PLAYER,
+          result: result.data.data.player
+        });
+      });
   };
 }
 
@@ -82,23 +88,25 @@ function createPlayer(variables) {
   `;
 
   return dispatch => {
-	return axios.post(GraphQLEndpoint, {
-	  query,
-	  variables,
-	}).then((result) => {
-	  if (result.data.errors) {
-		dispatch({
-		  type: CREATE_PLAYER,
-		  error: result.data.errors,
-		})
-		return;
-	  }
+    return axios
+      .post(GraphQLEndpoint, {
+        query,
+        variables
+      })
+      .then(result => {
+        if (result.data.errors) {
+          dispatch({
+            type: CREATE_PLAYER,
+            error: result.data.errors
+          });
+          return;
+        }
 
-	  dispatch({
-		type: CREATE_PLAYER,
-		result: result.data.data.createPlayer,
-	  });
-	});
+        dispatch({
+          type: CREATE_PLAYER,
+          result: result.data.data.createPlayer
+        });
+      });
   };
 }
 
@@ -169,23 +177,25 @@ function updatePlayer(variables) {
   `;
 
   return dispatch => {
-	return axios.post(GraphQLEndpoint, {
-	  query,
-	  variables,
-	}).then((result) => {
-	  if (result.data.errors) {
-		dispatch({
-		  type: EDIT_PLAYER,
-		  error: result.data.errors,
-		})
-		return;
-	  }
+    return axios
+      .post(GraphQLEndpoint, {
+        query,
+        variables
+      })
+      .then(result => {
+        if (result.data.errors) {
+          dispatch({
+            type: EDIT_PLAYER,
+            error: result.data.errors
+          });
+          return;
+        }
 
-	  dispatch({
-		type: EDIT_PLAYER,
-		result: result.data.data.updatePlayer,
-	  });
-	});
+        dispatch({
+          type: EDIT_PLAYER,
+          result: result.data.data.updatePlayer
+        });
+      });
   };
 }
 
@@ -199,23 +209,25 @@ function removePlayer(variables) {
   `;
 
   return dispatch => {
-	return axios.post(GraphQLEndpoint, {
-	  query,
-	  variables
-	}).then((result) => {
-	  if (result.data.errors) {
-		dispatch({
-		  type: REMOVE_PLAYER,
-		  error: result.data.errors,
-		})
-		return;
-	  }
+    return axios
+      .post(GraphQLEndpoint, {
+        query,
+        variables
+      })
+      .then(result => {
+        if (result.data.errors) {
+          dispatch({
+            type: REMOVE_PLAYER,
+            error: result.data.errors
+          });
+          return;
+        }
 
-	  dispatch({
-		type: REMOVE_PLAYER,
-		result: result.data.data.removePlayer,
-	  });
-	});
+        dispatch({
+          type: REMOVE_PLAYER,
+          result: result.data.data.removePlayer
+        });
+      });
   };
 }
 
@@ -224,5 +236,5 @@ module.exports = {
   getPlayers,
   createPlayer,
   updatePlayer,
-  removePlayer,
+  removePlayer
 };
