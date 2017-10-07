@@ -19,7 +19,37 @@ if (process.env.NODE_ENV === 'production') {
 function getPlayers() {
   let query = `
 	query getPlayers {
-	  players
+    players {
+      _id
+      old_id
+      mfl_id
+      name
+      position
+      team
+      draft_year
+      twitter_username
+      stats_id
+      weight
+      college
+      draft_round
+      height
+      rotoworld_id
+      nfl_id
+      espn_id
+      birthdate
+      status
+      armchair_id
+      stats_global_id
+      kffl_id
+      draft_team
+      draft_pick
+      jersey
+      cbs_id
+      sportsdata_id
+      fp_id
+      createdAt
+      updatedAt
+    }
 	}
   `;
 
@@ -30,7 +60,6 @@ function getPlayers() {
       })
       .then(result => {
         if (result.data.errors) {
-          console.log('merp');
           dispatch({
             type: ALL_PLAYERS,
             error: result.data.errors
@@ -42,8 +71,7 @@ function getPlayers() {
           type: ALL_PLAYERS,
           result: result.data.data.players
         });
-      })
-      .catch(err => console.log('err', err));
+      });
   };
 }
 

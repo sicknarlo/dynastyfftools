@@ -1,17 +1,17 @@
 {
-  "name": "redux-seed",
-  "description": "Rubix - ReactJS Admin Template",
+  "name": "dynastyfftools",
+  "description": "DynastyFF Tools",
   "authors": [
-    "Sketchpixy <support@sketchpixy.com>"
+    "sicknarlo <nicholas.l.sarlo@gmail.com>"
   ],
-  "copyright": "SketchPixy LLP, email: support@sketchpixy.com",
+  "copyright": "nicholas.l.sarlo@gmail.com",
   "keywords": [
     "rubix",
     "admin",
     "sketchpixy",
     "reactjs"
   ],
-  "homepage": "http://rubix400.sketchpixy.com",
+  "homepage": "http://dynastyfftools.com",
   "private": true,
   "ignore": [
     "**/.*",
@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "PACE": "pace#~1.0.2"
+    "PACE": "pace#~1.0.2",
+    "filament-tablesaw": "^2.0.3"
   }
 }

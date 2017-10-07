@@ -11,7 +11,7 @@ import Header from './common/header';
 import Footer from './common/footer';
 
 /* Pages */
-import AllPlayers from './routes/AllPlayers';
+import Players from './routes/Players';
 import Home from './routes/Home';
 import Home2 from './routes/Home2';
 
@@ -36,6 +36,6 @@ class App extends React.Component {
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={AllPlayers} />
+    <IndexRoute component={Players} />
   </Route>
 );
