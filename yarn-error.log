@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Nick\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Users\Nick\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add eslint eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
 
 PATH: 
-  C:\cmder\bin;C:\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\cmder\vendor\conemu-maximus5;C:\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Microsoft Windows Performance Toolkit\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Nick\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\Nick\Anaconda2;C:\Users\Nick\Anaconda2\Scripts;C:\Users\Nick\Anaconda2\Library\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Nick\AppData\Roaming\npm;C:\Users\Nick\AppData\Local\atom\bin;C:\Users\Nick\AppData\Local\.meteor\;C:\Users\Nick\AppData\Local\Microsoft\WindowsApps;C:\Python27;C:\Python27\Scripts;C:\Users\Nick\AppData\Roaming\nvm;C:\Program Files\nodejs;;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\share\vim\vim74;C:\cmder\
+  C:\Users\Nick\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Nick\bin;C:\Program Files\Microsoft MPI\Bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files (x86)\Skype\Phone;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit;C:\Program Files\Microsoft Windows Performance Toolkit;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Program Files\MySQL\MySQL Utilities 1.6;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Users\Nick\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet;C:\Program Files\Git\cmd;C:\Users\Nick\Anaconda2;C:\Users\Nick\Anaconda2\Scripts;C:\Users\Nick\Anaconda2\Library\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Nick\AppData\Roaming\npm;C:\Users\Nick\AppData\Local\atom\bin;C:\Users\Nick\AppData\Local\.meteor;C:\Users\Nick\AppData\Local\Microsoft\WindowsApps;C:\Python27;C:\Python27\Scripts;C:\Users\Nick\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Nick\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   0.16.1
@@ -107,6 +107,7 @@ npm manifest:
       "es6-promise": "^3.2.1",
       "express": "^4.14.0",
       "express-graphql": "^0.5.3",
+      "graphql-iso-date": "^3.3.0",
       "promised-mongo": "git+https://github.com/mindeavor/promised-mongo.git",
       "pug": "^2.0.0-beta3",
       "react": "^15.3.0",
@@ -124,19 +125,19 @@ yarn manifest:
 
 bower manifest: 
   {
-    "name": "redux-seed",
-    "description": "Rubix - ReactJS Admin Template",
+    "name": "dynastyfftools",
+    "description": "DynastyFF Tools",
     "authors": [
-      "Sketchpixy <support@sketchpixy.com>"
+      "sicknarlo <nicholas.l.sarlo@gmail.com>"
     ],
-    "copyright": "SketchPixy LLP, email: support@sketchpixy.com",
+    "copyright": "nicholas.l.sarlo@gmail.com",
     "keywords": [
       "rubix",
       "admin",
       "sketchpixy",
       "reactjs"
     ],
-    "homepage": "http://rubix400.sketchpixy.com",
+    "homepage": "http://dynastyfftools.com",
     "private": true,
     "ignore": [
       "**/.*",
@@ -146,7 +147,8 @@ bower manifest:
       "tests"
     ],
     "dependencies": {
-      "PACE": "pace#~1.0.2"
+      "PACE": "pace#~1.0.2",
+      "datatables": "^1.10.12"
     }
   }
 

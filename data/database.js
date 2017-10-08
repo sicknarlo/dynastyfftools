@@ -1,7 +1,25 @@
 import pmongo from 'promised-mongo';
 import { convertFromEpoch } from '../src/utilities';
 
-const db = pmongo('dynastyfftools', ['players']);
+const db = pmongo('dynastyfftools', ['players', 'ecr']);
+
+export function getECRForPlayer({ playerId }) {
+  if (!playerId) {
+    return new Promise((resolve, reject) => {
+      reject(`"playerId" cannot be empty`);
+    });
+  }
+  return db.ecr.find({ playerId });
+}
+
+export function createECR(ecr) {
+  if (!ecr) {
+    return new Promise((resolve, reject) => {
+      reject(`"ecr" cannot be empty`);
+    });
+  }
+  return db.ecr.insert(ecr);
+}
 
 export function getPlayer({ _id = null, name= null }) {
   // Fetch player by _id if id
@@ -16,11 +34,10 @@ export function getPlayers() {
 
 export function createPlayer(player) {
   if (!player) {
-	return new Promise((resolve, reject) => {
-	  reject(`"player" cannot be empty`);
-	});
+  	return new Promise((resolve, reject) => {
+  	  reject(`"player" cannot be empty`);
+  	});
   }
-
   return db.players.insert({ ...player, createdAt: convertFromEpoch(new Date()), updatedAt: convertFromEpoch(new Date()) });
 }
 

@@ -16,6 +16,8 @@ import {
 import {
   PlayerInputType,
   PlayerType,
+  ECRType,
+  ECRInputType,
 } from './types';
 
 // import db operations
@@ -25,6 +27,8 @@ import {
   createPlayer,
   updatePlayer,
   removePlayer,
+  getECRForPlayer,
+  createECR,
 } from './database';
 
 const queryType = new GraphQLObjectType({
@@ -42,6 +46,12 @@ const queryType = new GraphQLObjectType({
   	  type: new GraphQLList(PlayerType),
   	  resolve: () => getPlayers(),
   	},
+    ecr: {
+      type: ECRType,
+      args: {
+        playerId: { type: GraphQLString },
+      }
+    }
   })
 });
 
@@ -55,6 +65,12 @@ const mutationType = new GraphQLObjectType({
   	  },
   	  resolve: (_, { player }) => createPlayer(player),
   	},
+    createECR: {
+      type: ECRType,
+      args: {
+        ecr: { type: ECRInputType },
+      }
+    },
   	updatePlayer: {
   	  type: PlayerType,
   	  args: {

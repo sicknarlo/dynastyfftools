@@ -22,6 +22,6 @@
   ],
   "dependencies": {
     "PACE": "pace#~1.0.2",
-    "filament-tablesaw": "^2.0.3"
+    "datatables": "^1.10.12"
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 
 import actions from '../redux/actions';
@@ -12,7 +13,14 @@ export default class Players extends React.Component {
   }
 
   componentDidMount() {
-    $('.tablesaw').table();
+    $(ReactDOM.findDOMNode(this.example))
+      .addClass('nowrap')
+      .dataTable({
+        responsive: true,
+        columnDefs: [
+          { targets: [-1, -3] }
+        ]
+    });
   }
 
   render() {
@@ -36,14 +44,21 @@ export default class Players extends React.Component {
                 <Col xs={12}>
                   <h3>Player List:</h3>
                   {errors}
-                  <Table striped bordered className='tablesaw' data-tablesaw-mode="swipe" data-tablesaw-sortable data-tablesaw-sortable-switch>
+                  <Table ref={(c) => this.example = c} className='display' cellSpacing='0' width='100%'>
                     <thead>
                       <tr>
-                        <th data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority='persist'>Name</th>
-                        <th data-tablesaw-sortable-col data-tablesaw-priority='1'>Position</th>
-                        <th data-tablesaw-sortable-col data-tablesaw-priority='2'>Team</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Team</th>
                       </tr>
                     </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Team</th>
+                      </tr>
+                    </tfoot>
                     <tbody>
                       {
                         result.map((player, i) => {
