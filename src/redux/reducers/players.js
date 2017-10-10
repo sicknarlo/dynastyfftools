@@ -3,8 +3,8 @@ import {
   EDIT_PLAYER,
   REMOVE_PLAYER,
   SINGLE_PLAYER,
-  CREATE_PLAYER
-} from "../actions/actionTypes";
+  CREATE_PLAYER,
+} from '../actions/actionTypes';
 
 function getIndexOfPlayerItem(action, state) {
   let index = -1,
@@ -24,7 +24,7 @@ function players(state = [], action) {
   if (action.error) {
     return {
       result: state.result,
-      error: action.error
+      error: action.error,
     };
   }
 
@@ -32,11 +32,11 @@ function players(state = [], action) {
     case SINGLE_PLAYER:
     case ALL_PLAYERS:
       return {
-        result: action.result
+        result: action.result,
       };
     case CREATE_PLAYER:
       return {
-        result: [...state.result, action.result]
+        result: [...state.result, action.result],
       };
     case EDIT_PLAYER:
       var index = getIndexOfPlayerItem(action, state);
@@ -49,8 +49,8 @@ function players(state = [], action) {
         result: [
           ...state.result.slice(0, index),
           Object.assign({}, state.result[index], action.result),
-          ...state.result.slice(index + 1)
-        ]
+          ...state.result.slice(index + 1),
+        ],
       };
     case REMOVE_PLAYER:
       var index = getIndexOfTodoItem(action, state);
@@ -60,10 +60,7 @@ function players(state = [], action) {
 
       // player found! don't include it in the new state
       return {
-        result: [
-          ...state.result.slice(0, index),
-          ...state.result.slice(index + 1)
-        ]
+        result: [...state.result.slice(0, index), ...state.result.slice(index + 1)],
       };
     default:
       return state;
@@ -71,5 +68,5 @@ function players(state = [], action) {
 }
 
 module.exports = {
-  players
+  players,
 };

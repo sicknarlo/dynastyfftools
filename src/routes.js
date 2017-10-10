@@ -12,8 +12,7 @@ import Footer from './common/footer';
 
 /* Pages */
 import Players from './routes/Players';
-import Home from './routes/Home';
-import Home2 from './routes/Home2';
+import Player from './routes/Player';
 
 class App extends React.Component {
   render() {
@@ -37,5 +36,6 @@ class App extends React.Component {
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Players} />
+    <Route path="/players/:id" component={Player} />
   </Route>
 );

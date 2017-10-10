@@ -2,79 +2,62 @@
 import {
   GraphQLObjectType,
   GraphQLNonNull,
-  GraphQLBoolean,
   GraphQLSchema,
   GraphQLString,
   GraphQLList,
   GraphQLInt,
-  GraphQLID,
-  GraphQLFloat,
-  GraphQLInputObjectType
 } from 'graphql';
 
 // import dynastyfftools types
-import {
-  PlayerInputType,
-  PlayerType,
-  ECRType,
-  ECRInputType,
-} from './types';
+import { PlayerInputType, PlayerType, ECRType, ECRInputType } from './types';
 
 // import db operations
-import {
-  getPlayer,
-  getPlayers,
-  createPlayer,
-  updatePlayer,
-  removePlayer,
-  getECRForPlayer,
-  createECR,
-} from './database';
+import { getPlayer, getPlayers, createPlayer, updatePlayer, removePlayer } from './database';
 
 const queryType = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
-  	player: {
-  	  type: PlayerType,
-  	  args: {
+    player: {
+      type: PlayerType,
+      args: {
         _id: { type: GraphQLString },
         name: { type: GraphQLString },
       },
-  	  resolve: (_, args) => getPlayer(args),
-  	},
-  	players: {
-  	  type: new GraphQLList(PlayerType),
-  	  resolve: () => getPlayers(),
-  	},
+      resolve: (_, args) => getPlayer(args),
+    },
+    players: {
+      type: new GraphQLList(PlayerType),
+      resolve: () => getPlayers(),
+    },
     ecr: {
       type: ECRType,
       args: {
         playerId: { type: GraphQLString },
-      }
-    }
-  })
+      },
+    },
+  }),
 });
 
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
-  	createPlayer: {
-  	  type: PlayerType,
-  	  args: {
-  		  player: { type: PlayerInputType },
-  	  },
-  	  resolve: (_, { player }) => createPlayer(player),
-  	},
+    createPlayer: {
+      type: PlayerType,
+      args: {
+        player: { type: PlayerInputType },
+      },
+      resolve: (_, { player }) => createPlayer(player),
+    },
     createECR: {
       type: ECRType,
       args: {
         ecr: { type: ECRInputType },
-      }
+      },
     },
-  	updatePlayer: {
-  	  type: PlayerType,
-  	  args: {
-  		  _id: { type: new GraphQLNonNull(GraphQLString) },
+    updatePlayer: {
+      type: PlayerType,
+      args: {
+        _id: { type: new GraphQLNonNull(GraphQLString) },
         old_id: { type: GraphQLString },
         mfl_id: { type: GraphQLString },
         name: { type: GraphQLString },
@@ -103,17 +86,17 @@ const mutationType = new GraphQLObjectType({
         fp_id: { type: GraphQLString },
         createdAt: { type: GraphQLInt },
         updatedAt: { type: GraphQLInt },
-  	  },
-  	  resolve: (_, args) => updatePlayer(args),
-  	},
-  	removePlayer: {
-  	  type: PlayerType,
-  	  args: {
-  		  _id: { type: new GraphQLNonNull(GraphQLString) },
-  	  },
-  	  resolve: (_, { _id }) => removePlayer(_id),
-  	}
-  })
+      },
+      resolve: (_, args) => updatePlayer(args),
+    },
+    removePlayer: {
+      type: PlayerType,
+      args: {
+        _id: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (_, { _id }) => removePlayer(_id),
+    },
+  }),
 });
 
 export default new GraphQLSchema({

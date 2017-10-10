@@ -1,12 +1,11 @@
+import axios from 'axios';
 import {
   ALL_PLAYERS,
   EDIT_PLAYER,
   CREATE_PLAYER,
   SINGLE_PLAYER,
-  REMOVE_PLAYER
+  REMOVE_PLAYER,
 } from './actionTypes';
-
-import axios from 'axios';
 
 import GraphQLSettings from '../../../graphql.json';
 
@@ -17,8 +16,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 function getPlayers() {
-  let query = `
-	query getPlayers {
+  const query = `
+  query getPlayers {
     players {
       _id
       old_id
@@ -50,97 +49,122 @@ function getPlayers() {
       createdAt
       updatedAt
     }
-	}
-  `;
+  }
+`;
 
-  return dispatch => {
-    return axios
-      .post(GraphQLEndpoint, {
-        query
-      })
-      .then(result => {
-        if (result.data.errors) {
-          dispatch({
-            type: ALL_PLAYERS,
-            error: result.data.errors
-          });
-          return;
-        }
-
+  return dispatch => axios
+    .post(GraphQLEndpoint, {
+      query,
+    })
+    .then((result) => {
+      if (result.data.errors) {
         dispatch({
           type: ALL_PLAYERS,
-          result: result.data.data.players
+          error: result.data.errors,
         });
+        return;
+      }
+
+      dispatch({
+        type: ALL_PLAYERS,
+        result: result.data.data.players,
       });
-  };
+    });
 }
 
 function getPlayer(variables) {
-  let query = `
-	query getPlayer($_id: String, $name: String) {
-	  player(_id: $_id, name: $name)
-	}
-  `;
+  const query = `
+  query getPlayer($_id: String, $name: String) {
+    player(_id: $_id, name: $name) {
+      _id
+      old_id
+      mfl_id
+      name
+      position
+      team
+      draft_year
+      twitter_username
+      stats_id
+      weight
+      college
+      draft_round
+      height
+      rotoworld_id
+      nfl_id
+      espn_id
+      birthdate
+      status
+      armchair_id
+      stats_global_id
+      kffl_id
+      draft_team
+      draft_pick
+      jersey
+      cbs_id
+      sportsdata_id
+      fp_id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 
-  return dispatch => {
-    return axios
+  return dispatch =>
+    axios
       .post(GraphQLEndpoint, {
         query,
-        variables
+        variables,
       })
-      .then(result => {
+      .then((result) => {
         if (result.data.errors) {
           dispatch({
             type: SINGLE_PLAYER,
-            error: result.data.errors
+            error: result.data.errors,
           });
           return;
         }
 
         dispatch({
           type: SINGLE_PLAYER,
-          result: result.data.data.player
+          result: result.data.data.player,
         });
       });
-  };
 }
 
 function createPlayer(variables) {
-  let query = `
-	mutation createPlayerMutation($player: Object!) {
-	  createPlayer(player: $player) {
-		_id
-		player
-	  }
-	}
+  const query = `
+  mutation createPlayerMutation($player: Object!) {
+    createPlayer(player: $player) {
+      _id
+      player
+    }
+  }
   `;
 
-  return dispatch => {
-    return axios
-      .post(GraphQLEndpoint, {
-        query,
-        variables
-      })
-      .then(result => {
-        if (result.data.errors) {
-          dispatch({
-            type: CREATE_PLAYER,
-            error: result.data.errors
-          });
-          return;
-        }
-
+  return dispatch => axios
+    .post(GraphQLEndpoint, {
+      query,
+      variables,
+    })
+    .then((result) => {
+      if (result.data.errors) {
         dispatch({
           type: CREATE_PLAYER,
-          result: result.data.data.createPlayer
+          error: result.data.errors,
         });
+        return;
+      }
+
+      dispatch({
+        type: CREATE_PLAYER,
+        result: result.data.data.createPlayer,
       });
-  };
+    });
 }
 
 function updatePlayer(variables) {
-  let query = `
-	mutation updatePlayerMutation(
+  const query = `
+  mutation updatePlayerMutation(
     $_id: String!,
     $old_id: String,
     $mfl_id: String,
@@ -169,7 +193,7 @@ function updatePlayer(variables) {
     $sportsdata_id: String,
     $fp_id: String,
   ) {
-	  updatePlayer(
+    updatePlayer(
       _id: $_id
       old_id: $old_id
       mfl_id: $mfl_id
@@ -198,65 +222,61 @@ function updatePlayer(variables) {
       sportsdata_id: $sportsdata_id
       fp_id: $fp_id
     ) {
-		_id
-		player
-	  }
-	}
-  `;
+      _id
+      player
+    }
+  }
+`;
 
-  return dispatch => {
-    return axios
-      .post(GraphQLEndpoint, {
-        query,
-        variables
-      })
-      .then(result => {
-        if (result.data.errors) {
-          dispatch({
-            type: EDIT_PLAYER,
-            error: result.data.errors
-          });
-          return;
-        }
-
+  return dispatch => axios
+    .post(GraphQLEndpoint, {
+      query,
+      variables,
+    })
+    .then((result) => {
+      if (result.data.errors) {
         dispatch({
           type: EDIT_PLAYER,
-          result: result.data.data.updatePlayer
+          error: result.data.errors,
         });
+        return;
+      }
+
+      dispatch({
+        type: EDIT_PLAYER,
+        result: result.data.data.updatePlayer,
       });
-  };
+    });
 }
 
 function removePlayer(variables) {
-  let query = `
-	mutation removePlayerMutation($_id: String!) {
-	  removePlayer(_id: $_id) {
-		_id
-	  }
-	}
-  `;
+  const query = `
+  mutation removePlayerMutation($_id: String!) {
+    removePlayer(_id: $_id) {
+      id
+    }
+  }
+`;
 
-  return dispatch => {
-    return axios
-      .post(GraphQLEndpoint, {
-        query,
-        variables
-      })
-      .then(result => {
-        if (result.data.errors) {
-          dispatch({
-            type: REMOVE_PLAYER,
-            error: result.data.errors
-          });
-          return;
-        }
-
+  return dispatch => axios
+    .post(GraphQLEndpoint, {
+      query,
+      variables,
+    })
+    .then((result) => {
+      if (result.data.errors) {
         dispatch({
           type: REMOVE_PLAYER,
-          result: result.data.data.removePlayer
+          error: result.data.errors,
         });
+        return;
+      }
+
+      dispatch({
+        type: REMOVE_PLAYER,
+        result: result.data.data.removePlayer,
       });
-  };
+    });
 }
 
 module.exports = {
@@ -264,5 +284,5 @@ module.exports = {
   getPlayers,
   createPlayer,
   updatePlayer,
-  removePlayer
+  removePlayer,
 };
